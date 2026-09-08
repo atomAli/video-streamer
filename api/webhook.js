@@ -170,18 +170,12 @@ function addConfirmText(title, url) {
 }
 
 function parseConfirmText(text) {
-    const lines = String(text || '').split('\n').map(l => l.trim()).filter(Boolean);
-    let url = null;
-    for (const line of lines) {
-        const m = line.match(/<code>(.*?)<\/code>/);
-        if (m) { url = unescHtml(m[1]); break; }
-    }
+    const lines = String(text || '').replace(/<[^>]*>/g, '').split('\n').map(l => l.trim()).filter(Boolean);
+    const url = findUrl(lines.join('\n'));
     let title = null;
     for (const line of lines) {
-        if (line.startsWith('🎬')) {
-            title = unescHtml(line.replace(/^🎬\s*/, ''));
-            break;
-        }
+        const m = line.match(/^\s*🎬\s*(.+)/);
+        if (m) { title = m[1].trim(); break; }
     }
     return { title: title && title !== 'ویدیو' && title.trim() ? title.trim() : null, url };
 }
