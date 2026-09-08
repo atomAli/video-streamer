@@ -19,6 +19,7 @@ const { PassThrough, Readable } = require('stream');
 const BASE = '/public_html';
 const VIDEOS_JS_PATH = BASE + '/videos.js';
 const MY_VIDEOS_JSON_PATH = BASE + '/tv/panel-data/my-videos.json';
+const UPTV_JSON_PATH = BASE + '/tv/panel-data/uptv.json';
 const MY_GROUP_NAME = 'ویدیوهای من';
 
 function getFtpClient() {
@@ -45,17 +46,6 @@ async function ftpWrite(client, remotePath, content) {
     await client.uploadFrom(stream, remotePath);
 }
 
-function extractGroupsFromJs(jsContent) {
-    const match = jsContent.match(/__CVP_VIDEOS__\s*=\s*(\[[\s\S]*?\])\s*;/);
-    if (!match) return [];
-    try {
-        return JSON.parse(match[1]);
-    } catch (e) {
-        console.error('Failed to parse existing videos.js:', e.message);
-        return [];
-    }
-}
-
 async function main() {
     // 1. Read GitHub videos.json
     const videosJsonPath = path.join(process.cwd(), 'videos.json');
@@ -75,28 +65,23 @@ async function main() {
     console.log('Connected to FTP');
 
     try {
-        // 3. Read current videos.js from host (to preserve uptv groups)
-        let existingGroups = [];
+        // 3. Read uptv groups from tv/panel-data/uptv.json (stable source on host)
+        let uptvGroups = [];
         try {
-            const existingJs = await ftpRead(client, VIDEOS_JS_PATH);
-            existingGroups = extractGroupsFromJs(existingJs);
-            console.log(`Host videos.js: ${existingGroups.length} groups found`);
-            existingGroups.forEach((g, i) => {
+            const uptvRaw = await ftpRead(client, UPTV_JSON_PATH);
+            const parsed = JSON.parse(uptvRaw);
+            if (Array.isArray(parsed)) {
+                uptvGroups = parsed.filter((g) => g && g.name && g.name !== MY_GROUP_NAME);
+            }
+            console.log(`Host uptv.json: ${uptvGroups.length} uptv groups found`);
+            uptvGroups.forEach((g, i) => {
                 console.log(`  ${i}: "${g.name}" (${(g.videos || []).length} videos)`);
             });
         } catch (e) {
-            console.log('Could not read existing videos.js, will create fresh');
+            console.log('Could not read uptv.json, will create fresh videos.js', e.message);
         }
 
-        // 4. Rebuild: keep uptv groups, replace "ویدیوهای من" with GitHub data
-        const uptvGroups = existingGroups.filter((g, i) => {
-            // Keep everything that is NOT the first "ویدیوهای من" group
-            if (i === 0 && g.name === MY_GROUP_NAME) return false;
-            // Also filter by name to catch any reordering
-            if (g.name === MY_GROUP_NAME) return false;
-            return true;
-        });
-
+        // 4. Rebuild: my group (from GitHub) + uptv groups (from host uptv.json)
         const allGroups = [
             { name: MY_GROUP_NAME, videos: myVideos },
             ...uptvGroups

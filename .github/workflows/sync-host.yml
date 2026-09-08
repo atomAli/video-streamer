@@ -6,6 +6,10 @@ on:
       - 'videos.json'
   workflow_dispatch:
 
+concurrency:
+  group: sync-host
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
