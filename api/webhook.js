@@ -1,12 +1,10 @@
 /*
  * Telegram Bot Webhook - Vercel Serverless Function
- * Manages videos.json in GitHub repo via Telegram commands.
+ * Persian, button-driven UX for low-tech users.
  *
- * Commands:
- *   /add <title> <url>  - Add a video
- *   /remove <index>     - Remove a video by index
- *   /list               - List all videos
- *   /help               - Show help
+ *  - Paste any link -> bot offers to add it (confirm with a button)
+ *  - /list shows delete buttons next to each video
+ *  - /start, /help, /add, /remove still work
  */
 
 const GITHUB_API = 'https://api.github.com';
@@ -28,13 +26,39 @@ function isAllowed(userId, config) {
     return config.allowedIds.includes(String(userId));
 }
 
-async function tgSendMessage(chatId, text, config) {
-    await fetch(`https://api.telegram.org/bot${config.botToken}/sendMessage`, {
+const escHtml = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const unescHtml = (s) => String(s ?? '').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+const truncate = (s, n) => (s.length > n ? s.slice(0, n - 1) + '…' : s);
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+async function tgApi(config, method, payload) {
+    const res = await fetch(`https://api.telegram.org/bot${config.botToken}/${method}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' })
+        body: JSON.stringify(payload)
     });
+    const body = await res.json().catch(() => ({}));
+    if (!res.ok || !body.ok) console.error(`${method} failed:`, res.status, JSON.stringify(body));
+    return body;
 }
+
+const sendMessage = (config, chatId, text, keyboard, parseMode = 'HTML') =>
+    tgApi(config, 'sendMessage', {
+        chat_id: chatId, text, parse_mode: parseMode,
+        ...(keyboard ? { reply_markup: { inline_keyboard: keyboard } } : {})
+    });
+
+const editMessage = (config, chatId, messageId, text, keyboard = null) =>
+    tgApi(config, 'editMessageText', {
+        chat_id: chatId, message_id: messageId, text, parse_mode: 'HTML',
+        ...(keyboard !== null ? { reply_markup: { inline_keyboard: keyboard } } : {})
+    });
+
+const answerCallback = (config, callbackId, text = '') =>
+    tgApi(config, 'answerCallbackQuery', { callback_query_id: callbackId, text });
+
+const row = (btns) => btns;
+const btn = (text, data) => ({ text, callback_data: data });
 
 async function githubGetFile(config) {
     const url = `${GITHUB_API}/repos/${config.owner}/${config.repo}/contents/${config.listFile}?ref=${config.branch}`;
@@ -67,63 +91,208 @@ async function githubUpdateFile(config, content, message, sha) {
         },
         body: JSON.stringify(body)
     });
-    if (!res.ok) {
-        const err = await res.text();
-        throw new Error(`GitHub PUT failed: ${res.status} ${err}`);
-    }
+    if (!res.ok) throw new Error(`GitHub PUT failed: ${res.status} ${await res.text()}`);
     return await res.json();
 }
 
 async function getVideos(config) {
     const file = await githubGetFile(config);
     if (!file) return { videos: [], sha: null };
-    const decoded = Buffer.from(file.content, 'base64').toString('utf-8');
-    const videos = JSON.parse(decoded);
-    return { videos, sha: file.sha };
+    return {
+        videos: JSON.parse(Buffer.from(file.content, 'base64').toString('utf-8')),
+        sha: file.sha
+    };
 }
 
-async function addVideo(config, title, url) {
-    const { videos, sha } = await getVideos(config);
-    videos.push({ title, url });
-    await githubUpdateFile(config, videos, `Add video: ${title}`, sha);
-    return videos.length;
+async function mutateVideos(config, mutate, commitMsg) {
+    let lastErr;
+    for (let attempt = 0; attempt < 4; attempt++) {
+        const { videos, sha } = await getVideos(config);
+        const detail = await mutate(videos);
+        try {
+            await githubUpdateFile(config, videos, commitMsg, sha);
+            return detail;
+        } catch (e) {
+            lastErr = e;
+            if (!/409|SHA|sha|conflict/i.test(String(e.message))) throw e;
+            await sleep(300 * (attempt + 1));
+        }
+    }
+    throw lastErr;
 }
 
-async function removeVideo(config, index) {
-    const { videos, sha } = await getVideos(config);
-    if (index < 0 || index >= videos.length) return null;
-    const removed = videos.splice(index, 1)[0];
-    await githubUpdateFile(config, videos, `Remove video: ${removed.title}`, sha);
-    return removed;
+function findUrl(text) {
+    const m = text.match(/https?:\/\/[^\s]+/i);
+    return m ? m[0] : null;
 }
 
-function formatList(videos) {
-    if (videos.length === 0) return 'No videos yet.';
-    let text = '<b>Videos:</b>\n\n';
-    videos.forEach((v, i) => {
-        text += `<code>${i}</code> - ${v.title}\n`;
-    });
-    return text;
+function parseMessage(text) {
+    const clean = String(text || '').replace(/^\/add\s+/i, '').trim();
+    const url = findUrl(clean);
+    if (!url) return null;
+    const before = clean.slice(0, clean.indexOf(url)).trim();
+    return { title: before || null, url };
 }
 
-function parseArgs(text, command) {
-    const stripped = text.replace(new RegExp(`^/${command}\\s*`, 'i'), '').trim();
-    return stripped;
+const HELP_TEXT = [
+    '<b>🎬 ربات ویدیو</b>',
+    '',
+    'برای <b>اضافه کردن</b> ویدیو، همینطوری <b>لینک</b> ویدیو رو بفرست.',
+    'مثلاً:',
+    '<code>https://example.com/movie.mp4</code>',
+    '',
+    'اگه بخوای <b>اسم</b> داشته باشه، اول اسم رو بنویس، بعد لینک:',
+    '<code>فیلم جدید https://example.com/movie.mp4</code>',
+    '',
+    'برای دیدن لیست: /list',
+    'برای حذف: توی لیست روی دکمه 🗑 بزن.'
+].join('\n');
+
+const NO_URL_TEXT = [
+    '😅 این که فرستادی، لینک ویدیو نبود.',
+    '',
+    'کافیه <b>لینک ویدیو</b> رو اینجا بفرستی تا اضافهش کنم.',
+    'مثلاً:',
+    '<code>https://example.com/movie.mp4</code>',
+    '',
+    'یا برای دیدن ویدیوها: <b>/list</b>'
+].join('\n');
+
+function addConfirmText(title, url) {
+    return [
+        '<b>➕ افزودن ویدیو جدید</b>',
+        '',
+        `🎬 ${escHtml(title || 'ویدیو')}`,
+        `🔗 <code>${escHtml(url)}</code>`,
+        '',
+        'میخوای اضافهکنم؟'
+    ].join('\n');
 }
 
-function splitTitleUrl(args) {
-    const tokens = args.split(/\s+/);
-    let urlIdx = -1;
-    for (let i = 0; i < tokens.length; i++) {
-        if (/^https?:\/\//i.test(tokens[i])) {
-            urlIdx = i;
+function parseConfirmText(text) {
+    const lines = String(text || '').split('\n').map(l => l.trim()).filter(Boolean);
+    let url = null;
+    for (const line of lines) {
+        const m = line.match(/<code>(.*?)<\/code>/);
+        if (m) { url = unescHtml(m[1]); break; }
+    }
+    let title = null;
+    for (const line of lines) {
+        if (line.startsWith('🎬')) {
+            title = unescHtml(line.replace(/^🎬\s*/, ''));
             break;
         }
     }
-    if (urlIdx === -1) return null;
-    const title = tokens.slice(0, urlIdx).join(' ') || 'Untitled';
-    const url = tokens.slice(urlIdx).join(' ');
-    return { title, url };
+    return { title: title && title !== 'ویدیو' && title.trim() ? title.trim() : null, url };
+}
+
+function listMessageText(videos, offset) {
+    if (!videos.length) return ['<b>📄 لیست ویدیوها</b>', '', 'هنوز ویدیویی اضافه نشده.', '', 'اولین ویدیو رو با فرستادن لینکش اضافه کن! 🚀'].join('\n');
+    const lines = ['<b>📄 لیست ویدیوها</b>', ''];
+    videos.forEach((v, i) => {
+        lines.push(`<code>${i}</code> — ${escHtml(v.title)}`);
+    });
+    return lines.join('\n');
+}
+
+function listKeyboard(videos) {
+    const kb = [];
+    videos.forEach((v, i) => {
+        kb.push([btn(`🗑 ${truncate(v.title, 28)}`, `del_${i}`)]);
+    });
+    kb.push([btn('➕ اضافه کردن ویدیو', 'add_hint'), btn('🔄 تازهسازی', 'list')]);
+    return kb;
+}
+
+async function sendList(config, chatId) {
+    const { videos, sha } = await getVideos(config);
+    return sendMessage(config, chatId, listMessageText(videos), listKeyboard(videos));
+}
+
+async function sendConfirmDelete(config, chatId, videos, index) {
+    const video = videos[index];
+    if (!video) {
+        return sendMessage(config, chatId, '❌ این ویدیو دیگه وجود نداره. لیست رو تازه کن:\n/list');
+    }
+    return sendMessage(config, chatId,
+        `🗑 <b>حذف این ویدیو؟</b>\n\n🎬 ${escHtml(video.title)}`,
+        [[btn('✅ بله، حذف کن', `del_yes_${index}`), btn('❌ نه', 'del_no')]]
+    );
+}
+
+async function handleCallback(config, cb) {
+    const chatId = cb.message?.chat?.id;
+    const messageId = cb.message?.message_id;
+    const userId = cb.from?.id;
+    const data = cb.data || '';
+
+    if (!chatId || !messageId) { await answerCallback(config, cb.id, 'مشکلی پیش اومد'); return; }
+    if (!isAllowed(userId, config)) { await answerCallback(config, cb.id, '⛔️ دسترسی ندارید'); return; }
+
+    if (data === 'add_confirm') {
+        const { title, url } = parseConfirmText(cb.message?.text || '');
+        if (!url) {
+            await answerCallback(config, cb.id, 'لینکی پیدا نکردم');
+            return;
+        }
+        const finalTitle = title || 'ویدیو';
+        await answerCallback(config, cb.id, 'در حال اضافه کردن…');
+        await mutateVideos(config, (v) => { v.push({ title: finalTitle, url }); return null; }, `Add video: ${finalTitle}`);
+        await editMessage(config, chatId, messageId, `✅ <b>اضافه شد!</b>\n\n🎬 ${escHtml(finalTitle)}`, []);
+        return;
+    }
+
+    if (data === 'add_cancel') {
+        await answerCallback(config, cb.id, 'لغو شد');
+        await editMessage(config, chatId, messageId, '❌ اضافه نشد.', []);
+        return;
+    }
+
+    if (data === 'add_hint') {
+        await answerCallback(config, cb.id, '');
+        await sendMessage(config, chatId, NO_URL_TEXT);
+        return;
+    }
+
+    if (data === 'list') {
+        await answerCallback(config, cb.id, '');
+        await editMessage(config, chatId, messageId, 'در حال بهروزرسانی…', []);
+        await sendList(config, chatId);
+        return;
+    }
+
+    if (data.startsWith('del_yes_')) {
+        const index = parseInt(data.split('_')[2], 10);
+        await answerCallback(config, cb.id, 'در حال حذف…');
+        const removed = await mutateVideos(config, (v) => {
+            if (index < 0 || index >= v.length) return null;
+            return v.splice(index, 1)[0];
+        }, `Remove video: ${index}`);
+        if (removed) {
+            await editMessage(config, chatId, messageId, `✅ <b>حذف شد:</b> ${escHtml(removed.title)}\n\nبرای دیدن لیست جدید: /list`, []);
+        } else {
+            await editMessage(config, chatId, messageId, '⚠️ این ویدیو دیگه وجود نداشت.', []);
+        }
+        return;
+    }
+
+    if (data.startsWith('del_')) {
+        const index = parseInt(data.split('_')[1], 10);
+        const { videos } = await getVideos(config);
+        if (isNaN(index) || index < 0 || index >= videos.length) {
+            await answerCallback(config, cb.id, 'این ویدیو دیگه نیست');
+            return;
+        }
+        await sendConfirmDelete(config, chatId, videos, index);
+        await answerCallback(config, cb.id, '');
+        return;
+    }
+
+    if (data === 'del_no') {
+        await answerCallback(config, cb.id, 'باشه، حذف نشد');
+        await editMessage(config, chatId, messageId, '❌ حذف نشد.', []);
+        return;
+    }
 }
 
 export default async function handler(req, res) {
@@ -136,6 +305,11 @@ export default async function handler(req, res) {
     try {
         const update = req.body;
 
+        if (update.callback_query) {
+            await handleCallback(config, update.callback_query);
+            return res.status(200).json({ ok: true });
+        }
+
         if (!update.message) {
             return res.status(200).json({ ok: true });
         }
@@ -146,60 +320,49 @@ export default async function handler(req, res) {
         const text = (msg.text || '').trim();
 
         if (!isAllowed(userId, config)) {
-            await tgSendMessage(chatId, 'Unauthorized.', config);
-            return res.status(200).json({ ok: true });
-        }
-
-        if (!text.startsWith('/')) {
+            await sendMessage(config, chatId, '⛔️ شما به این ربات دسترسی ندارید.');
             return res.status(200).json({ ok: true });
         }
 
         const command = text.split(/\s/)[0].toLowerCase();
 
         if (command === '/start' || command === '/help') {
-            const help = [
-                '<b>Video Streamer Bot</b>',
-                '',
-                '/add <code>&lt;title&gt; &lt;url&gt;</code> - Add a video',
-                '/remove <code>&lt;index&gt;</code> - Remove by index',
-                '/list - List all videos',
-                '/help - Show this help'
-            ].join('\n');
-            await tgSendMessage(chatId, help, config);
-
-        } else if (command === '/list') {
-            const { videos } = await getVideos(config);
-            await tgSendMessage(chatId, formatList(videos), config);
-
-        } else if (command === '/add') {
-            const args = parseArgs(text, 'add');
-            const parsed = splitTitleUrl(args);
-            if (!parsed) {
-                await tgSendMessage(chatId, 'Usage: /add <code>&lt;title&gt; &lt;url&gt;</code>', config);
-            } else {
-                const count = await addVideo(config, parsed.title, parsed.url);
-                await tgSendMessage(chatId, `Added: <b>${parsed.title}</b>\nTotal: ${count} videos.`, config);
-            }
-
-        } else if (command === '/remove') {
-            const args = parseArgs(text, 'remove');
-            const index = parseInt(args, 10);
-            if (isNaN(index)) {
-                await tgSendMessage(chatId, 'Usage: /remove <code>&lt;index&gt;</code>', config);
-            } else {
-                const removed = await removeVideo(config, index);
-                if (!removed) {
-                    await tgSendMessage(chatId, 'Invalid index.', config);
-                } else {
-                    await tgSendMessage(chatId, `Removed: ${removed.title}`, config);
-                }
-            }
-
-        } else {
-            await tgSendMessage(chatId, 'Unknown command. Use /help', config);
+            await sendMessage(config, chatId, HELP_TEXT);
+            return res.status(200).json({ ok: true });
         }
 
+        if (command === '/list') {
+            await sendList(config, chatId);
+            return res.status(200).json({ ok: true });
+        }
+
+        if (command === '/add' || findUrl(text)) {
+            const parsed = parseMessage(text);
+            if (!parsed) {
+                await sendMessage(config, chatId, 'یک لینک معتبر بفرست، مثلاً:\n<code>https://example.com/movie.mp4</code>');
+            } else {
+                await sendMessage(config, chatId, addConfirmText(parsed.title, parsed.url), [
+                    [btn('✅ بله، اضافه کن', 'add_confirm'), btn('❌ نه', 'add_cancel')]
+                ]);
+            }
+            return res.status(200).json({ ok: true });
+        }
+
+        if (command === '/remove') {
+            const tokens = text.trim().split(/\s+/);
+            const index = parseInt(tokens[1], 10);
+            const { videos } = await getVideos(config);
+            if (isNaN(index)) {
+                await sendMessage(config, chatId, 'شماره ویدیو رو بعد از /remove بفرست، مثلاً:\n<code>/remove 2</code>');
+            } else {
+                await sendConfirmDelete(config, chatId, videos, index);
+            }
+            return res.status(200).json({ ok: true });
+        }
+
+        await sendMessage(config, chatId, NO_URL_TEXT);
         return res.status(200).json({ ok: true });
+
     } catch (err) {
         console.error('Bot error:', err);
         return res.status(200).json({ ok: true });
