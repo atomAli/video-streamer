@@ -11,11 +11,10 @@
  *   6. Also uploads my-videos.json (flat list) for the panel data
  */
 
-const { readFile, writeFile } = require('basic-ftp');
 const { Client } = require('basic-ftp');
 const fs = require('fs');
 const path = require('path');
-const { PassThrough } = require('stream');
+const { PassThrough, Readable } = require('stream');
 
 const BASE = '/public_html';
 const VIDEOS_JS_PATH = BASE + '/videos.js';
@@ -42,7 +41,8 @@ async function ftpRead(client, remotePath) {
 }
 
 async function ftpWrite(client, remotePath, content) {
-    await client.uploadFrom(Buffer.from(content, 'utf-8'), remotePath);
+    const stream = Readable.from([Buffer.from(content, 'utf-8')]);
+    await client.uploadFrom(stream, remotePath);
 }
 
 function extractGroupsFromJs(jsContent) {
