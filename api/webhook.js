@@ -111,6 +111,21 @@ function parseArgs(text, command) {
     return stripped;
 }
 
+function splitTitleUrl(args) {
+    const tokens = args.split(/\s+/);
+    let urlIdx = -1;
+    for (let i = 0; i < tokens.length; i++) {
+        if (/^https?:\/\//i.test(tokens[i])) {
+            urlIdx = i;
+            break;
+        }
+    }
+    if (urlIdx === -1) return null;
+    const title = tokens.slice(0, urlIdx).join(' ') || 'Untitled';
+    const url = tokens.slice(urlIdx).join(' ');
+    return { title, url };
+}
+
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
         return res.status(200).json({ ok: true });
@@ -158,14 +173,12 @@ export default async function handler(req, res) {
 
         } else if (command === '/add') {
             const args = parseArgs(text, 'add');
-            const spaceIdx = args.indexOf(' ');
-            if (spaceIdx === -1 || !args) {
+            const parsed = splitTitleUrl(args);
+            if (!parsed) {
                 await tgSendMessage(chatId, 'Usage: /add <code>&lt;title&gt; &lt;url&gt;</code>', config);
             } else {
-                const title = args.substring(0, spaceIdx).trim();
-                const url = args.substring(spaceIdx + 1).trim();
-                const count = await addVideo(config, title, url);
-                await tgSendMessage(chatId, `Added. Total: ${count} videos.`, config);
+                const count = await addVideo(config, parsed.title, parsed.url);
+                await tgSendMessage(chatId, `Added: <b>${parsed.title}</b>\nTotal: ${count} videos.`, config);
             }
 
         } else if (command === '/remove') {
