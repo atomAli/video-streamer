@@ -1,0 +1,314 @@
+/*
+ * App - fetches video list from GitHub and handles navigation.
+ */
+(function () {
+    'use strict';
+
+    var CACHE_KEY = 'streamer_videos_v1';
+
+    var state = 'boot';
+    var videos = [];
+    var focusedIndex = 0;
+
+    var loadingEl, errorEl, errorMsgEl;
+    var listViewEl, listEl, countEl;
+
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    function getSource() {
+        return window.APP_CONFIG && window.APP_CONFIG.api;
+    }
+
+    function buildListUrl() {
+        var s = getSource();
+        if (!s || !s.listUrl) {
+            return null;
+        }
+        return s.listUrl + '?_=' + Date.now();
+    }
+
+    function loadVideoList(onDone, onError) {
+        var url = buildListUrl();
+        if (!url) {
+            onError(new Error('GitHub config missing'));
+            return;
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.timeout = 15000;
+
+        xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                try {
+                    var data = JSON.parse(xhr.responseText);
+                    var entries = (data && data.videos) ? data.videos : [];
+                    onDone(normalizeEntries(entries));
+                } catch (e) {
+                    onError(new Error('Invalid JSON'));
+                }
+            } else {
+                onError(new Error('HTTP ' + xhr.status));
+            }
+        };
+
+        xhr.onerror = function () {
+            onError(new Error('Network error'));
+        };
+
+        xhr.ontimeout = function () {
+            onError(new Error('Timeout'));
+        };
+
+        xhr.send();
+    }
+
+    function normalizeEntries(entries) {
+        var files = [];
+        if (!(entries instanceof Array)) {
+            return files;
+        }
+        for (var i = 0; i < entries.length; i++) {
+            var e = entries[i];
+            if (!e) { continue; }
+            if (e.videos instanceof Array) {
+                files.push({ header: true, name: e.name || ' ' });
+                var kids = e.videos;
+                for (var j = 0; j < kids.length; j++) {
+                    var v = kids[j];
+                    if (!v || !v.url) { continue; }
+                    files.push({ name: v.title || 'Video ' + (j + 1), url: v.url });
+                }
+                continue;
+            }
+            if (e.url) {
+                files.push({ name: e.title || 'Video ' + (i + 1), url: e.url });
+            }
+        }
+        return files;
+    }
+
+    function saveCache(files) {
+        try {
+            window.localStorage.setItem(CACHE_KEY, JSON.stringify(files));
+        } catch (e) { /* noop */ }
+    }
+
+    function loadCache() {
+        try {
+            var raw = window.localStorage.getItem(CACHE_KEY);
+            return raw ? JSON.parse(raw) : null;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function showView(name) {
+        loadingEl.classList.add('hidden');
+        errorEl.classList.add('hidden');
+        listViewEl.classList.add('hidden');
+        $('player-view').classList.add('hidden');
+
+        if (name === 'loading') {
+            loadingEl.classList.remove('hidden');
+        } else if (name === 'list') {
+            listViewEl.classList.remove('hidden');
+        } else if (name === 'player') {
+            $('player-view').classList.remove('hidden');
+        } else if (name === 'error') {
+            errorEl.classList.remove('hidden');
+        }
+    }
+
+    function showError(msg) {
+        state = 'error';
+        showView('error');
+        errorMsgEl.textContent = msg;
+    }
+
+    function renderList(files) {
+        videos = files;
+        focusedIndex = 0;
+
+        listEl.innerHTML = '';
+        var playable = 0;
+        for (var i = 0; i < files.length; i++) {
+            if (!files[i].header) { playable++; }
+        }
+        countEl.textContent = playable === 0 ? '' : (playable + ' video' + (playable === 1 ? '' : 's'));
+
+        if (playable === 0) {
+            var empty = document.createElement('div');
+            empty.className = 'list-empty';
+            empty.textContent = 'No videos yet. Use the Telegram bot to add videos.';
+            listEl.appendChild(empty);
+            return;
+        }
+
+        for (var i = 0; i < files.length; i++) {
+            (function (idx) {
+                var f = files[idx];
+
+                if (f.header) {
+                    var head = document.createElement('div');
+                    head.className = 'list-header';
+                    head.textContent = f.name;
+                    listEl.appendChild(head);
+                    return;
+                }
+
+                var item = document.createElement('div');
+                item.className = 'list-item';
+                item.setAttribute('data-index', idx);
+
+                var arrow = document.createElement('span');
+                arrow.className = 'item-arrow';
+                arrow.innerHTML = '&#9654;';
+
+                var title = document.createElement('span');
+                title.className = 'item-title';
+                title.textContent = f.name;
+
+                item.appendChild(arrow);
+                item.appendChild(title);
+
+                item.addEventListener('click', function () {
+                    playIndex(idx);
+                });
+
+                listEl.appendChild(item);
+            })(i);
+        }
+    }
+
+    function playIndex(idx) {
+        if (!videos[idx] || videos[idx].header) { return; }
+        var v = videos[idx];
+        state = 'player';
+        showView('player');
+        VideoPlayer.stop();
+        VideoPlayer.load(v.url, v.name);
+        VideoPlayer.play();
+    }
+
+    function exitPlayer() {
+        VideoPlayer.stop();
+        state = 'list';
+        showView('list');
+    }
+
+    function boot() {
+        document.title = 'Video Streamer';
+
+        if (!getSource() || !getSource().listUrl) {
+            showError('Configure API settings in config.js');
+            return;
+        }
+
+        var cached = loadCache();
+        if (cached && cached.length) {
+            state = 'list';
+            showView('list');
+            renderList(cached);
+        } else {
+            state = 'boot';
+            showView('loading');
+        }
+
+        loadVideoList(function (files) {
+            state = 'list';
+            showView('list');
+            renderList(files);
+            saveCache(files);
+        }, function (err) {
+            if (state === 'list') {
+                return;
+            }
+            var msg = 'Could not load videos.\n';
+            msg += (err && err.message) ? err.message : 'Network error';
+            showError(msg);
+        });
+    }
+
+    function wireButtons() {
+        var back = $('btn-back');
+        if (back) {
+            back.addEventListener('click', exitPlayer);
+        }
+
+        var play = $('btn-play');
+        if (play) {
+            play.addEventListener('click', function () {
+                VideoPlayer.togglePlayPause();
+                VideoPlayer.showControls();
+            });
+        }
+
+        var rew = $('btn-rew');
+        if (rew) {
+            rew.addEventListener('click', function () {
+                VideoPlayer.seekBackward();
+                VideoPlayer.showControls();
+            });
+        }
+
+        var fwd = $('btn-fwd');
+        if (fwd) {
+            fwd.addEventListener('click', function () {
+                VideoPlayer.seekForward();
+                VideoPlayer.showControls();
+            });
+        }
+
+        var voldn = $('btn-voldn');
+        if (voldn) {
+            voldn.addEventListener('click', function () {
+                VideoPlayer.volumeDown();
+                VideoPlayer.showControls();
+            });
+        }
+
+        var volup = $('btn-volup');
+        if (volup) {
+            volup.addEventListener('click', function () {
+                VideoPlayer.volumeUp();
+                VideoPlayer.showControls();
+            });
+        }
+    }
+
+    function onDomReady(fn) {
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            fn();
+        } else {
+            document.addEventListener('DOMContentLoaded', fn, false);
+        }
+    }
+
+    function init() {
+        loadingEl = $('loading');
+        errorEl = $('error');
+        errorMsgEl = $('error-message');
+        listViewEl = $('list-view');
+        listEl = $('video-list');
+        countEl = $('video-count');
+
+        VideoPlayer.init();
+        VideoPlayer.onEnded(exitPlayer);
+        VideoPlayer.onStateChanged(function (playing) {
+            var b = $('btn-play');
+            if (b) { b.textContent = playing ? 'Pause' : 'Play'; }
+        });
+
+        wireButtons();
+        onDomReady(boot);
+    }
+
+    if (typeof document.addEventListener === 'function') {
+        document.addEventListener('DOMContentLoaded', init, false);
+    } else {
+        window.onload = init;
+    }
+})();

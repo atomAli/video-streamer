@@ -1,0 +1,11 @@
+{
+  "name": "video-streamer",
+  "version": "1.0.0",
+  "description": "Lightweight video streaming page with Telegram bot management",
+  "private": true,
+  "scripts": {
+    "start:dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {}
+}

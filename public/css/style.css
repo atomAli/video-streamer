@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #05070d;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #05070d;
+}
+
+.center-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #05070d;
+    z-index: 50;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #1c2536;
+    border-top-color: #00b4ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-text {
+    margin-top: 16px;
+    font-size: 16px;
+    color: #9aa7bd;
+}
+
+.error-icon {
+    font-size: 48px;
+    color: #ff6b6b;
+    margin-bottom: 16px;
+}
+
+.error-message {
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    max-width: 80%;
+    white-space: pre-line;
+}
+
+.error-hint {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #6b7a94;
+}
+
+#list-view {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    align-items: baseline;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #1c2536;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.header-count {
+    margin-left: 12px;
+    font-size: 14px;
+    color: #6b7a94;
+}
+
+.list {
+    flex: 1;
+    margin-top: 16px;
+    overflow-y: auto;
+}
+
+.list-header {
+    padding: 12px 8px 6px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #00b4ff;
+    text-transform: uppercase;
+    border-bottom: 1px solid #16202f;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: #0d1322;
+    color: #d5ddee;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.list-item .item-arrow {
+    margin-right: 12px;
+    font-size: 12px;
+    color: #00b4ff;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.list-item .item-title {
+    flex: 1;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-item:hover {
+    background: #12314a;
+    border-color: #00b4ff;
+    color: #ffffff;
+}
+
+.list-item:hover .item-arrow {
+    opacity: 1;
+}
+
+.list-empty {
+    padding: 32px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #6b7a94;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+}
+
+.osd {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 24px 32px 32px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.85));
+    z-index: 10;
+    transition: opacity 0.4s ease;
+}
+
+.osd.hidden-osd {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.osd-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.osd-progress {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.osd-buffer-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: rgba(255,255,255,0.5);
+    border-radius: 4px;
+}
+
+.osd-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #00b4ff;
+    border-radius: 4px;
+}
+
+.osd-buffer {
+    margin-left: 12px;
+    color: #9aa7bd;
+    font-size: 12px;
+}
+
+.player-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5,7,13,0.55);
+    z-index: 15;
+    pointer-events: none;
+}
+
+.player-loading-text {
+    margin-top: 14px;
+    font-size: 16px;
+    color: #9aa7bd;
+}
+
+.osd-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.ctrl-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    margin-right: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #e6eefc;
+    background: #16202f;
+    border: 1px solid #2a3a55;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.15s ease;
+}
+
+.ctrl-btn:hover,
+.ctrl-btn:focus {
+    background: #12314a;
+    border-color: #00b4ff;
+    color: #ffffff;
+}
+
+.ctrl-back {
+    background: #1d1030;
+    border-color: #4a2a55;
+}
+
+.ctrl-play {
+    font-weight: 700;
+    min-width: 70px;
+}
+
+.osd-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.osd-time {
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    color: #e6eefc;
+}
+
+.osd-error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5,7,13,0.85);
+    z-index: 20;
+}
+
+.osd-error-message {
+    font-size: 18px;
+    color: #ff6b6b;
+}
+
+.osd-error-hint {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #9aa7bd;
+}
+
+@media (max-width: 600px) {
+    #list-view {
+        padding: 16px;
+    }
+
+    .header-title {
+        font-size: 20px;
+    }
+
+    .list-item {
+        padding: 10px 12px;
+    }
+
+    .list-item .item-title {
+        font-size: 14px;
+    }
+
+    .ctrl-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
