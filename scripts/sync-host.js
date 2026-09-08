@@ -46,26 +46,15 @@ async function ftpWrite(client, remotePath, content) {
     await client.uploadFrom(stream, remotePath);
 }
 
-async function main() {
-    // 1. Read GitHub videos.json
-    const videosJsonPath = path.join(process.cwd(), 'videos.json');
-    let myVideos;
-    try {
-        const raw = fs.readFileSync(videosJsonPath, 'utf-8');
-        myVideos = JSON.parse(raw);
-        if (!Array.isArray(myVideos)) myVideos = [];
-    } catch (e) {
-        console.error('Failed to read videos.json:', e.message);
-        process.exit(1);
-    }
-    console.log(`GitHub videos.json: ${myVideos.length} videos`);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-    // 2. Connect to FTP
+async function syncOnce(myVideos) {
+    // Fresh connection each attempt (a timed-out data connection leaves the old one unreliable)
     const client = await getFtpClient();
     console.log('Connected to FTP');
 
     try {
-        // 3. Read uptv groups from tv/panel-data/uptv.json (stable source on host)
+        // 1. Read uptv groups from tv/panel-data/uptv.json (stable source on host)
         let uptvGroups = [];
         try {
             const uptvRaw = await ftpRead(client, UPTV_JSON_PATH);
@@ -81,21 +70,22 @@ async function main() {
             console.log('Could not read uptv.json, will create fresh videos.js', e.message);
         }
 
-        // 4. Rebuild: my group (from GitHub) + uptv groups (from host uptv.json)
+        // 2. Rebuild: my group (from GitHub) + uptv groups (from host uptv.json)
         const allGroups = [
             { name: MY_GROUP_NAME, videos: myVideos },
             ...uptvGroups
         ];
 
-        // 5. Write videos.js (the TV page reads this via script injection)
-        const videosJs = 'window.__CVP_VIDEOS__ = ' + JSON.stringify(allGroups, null, 2) + ';\n';
-        await ftpWrite(client, VIDEOS_JS_PATH, videosJs);
-        console.log(`Uploaded ${VIDEOS_JS_PATH} (${videosJs.length} bytes)`);
-
-        // 6. Write my-videos.json (the panel reads this)
+        // 3. Write my-videos.json FIRST (secondary), then videos.js (TV page) LAST
+        //    so that if one upload fails mid-run, the primary file stays consistent.
         const myJson = JSON.stringify(myVideos, null, 2) + '\n';
         await ftpWrite(client, MY_VIDEOS_JSON_PATH, myJson);
         console.log(`Uploaded ${MY_VIDEOS_JSON_PATH} (${myJson.length} bytes)`);
+
+        // 4. Write videos.js (the TV page reads this via script injection)
+        const videosJs = 'window.__CVP_VIDEOS__ = ' + JSON.stringify(allGroups, null, 2) + ';\n';
+        await ftpWrite(client, VIDEOS_JS_PATH, videosJs);
+        console.log(`Uploaded ${VIDEOS_JS_PATH} (${videosJs.length} bytes)`);
 
         // Summary
         console.log(`\nDone. videos.js now has ${allGroups.length} groups.`);
@@ -107,7 +97,40 @@ async function main() {
     }
 }
 
+async function main() {
+    // 1. Read GitHub videos.json
+    const videosJsonPath = path.join(process.cwd(), 'videos.json');
+    let myVideos;
+    try {
+        const raw = fs.readFileSync(videosJsonPath, 'utf-8');
+        myVideos = JSON.parse(raw);
+        if (!Array.isArray(myVideos)) myVideos = [];
+    } catch (e) {
+        console.error('Failed to read videos.json:', e.message);
+        process.exit(1);
+    }
+    console.log(`GitHub videos.json: ${myVideos.length} videos`);
+
+    // 2. Sync with retries. Transient FTP timeouts on the data connection are common,
+    //    so retry the whole operation with a fresh connection a few times.
+    let lastErr;
+    for (let attempt = 1; attempt <= 3; attempt++) {
+        try {
+            await syncOnce(myVideos);
+            return;
+        } catch (e) {
+            lastErr = e;
+            console.error(`Sync attempt ${attempt} failed: ${e.message}`);
+            if (attempt < 3) {
+                console.log(`Retrying in ${attempt * 5}s...`);
+                await sleep(attempt * 5000);
+            }
+        }
+    }
+    throw lastErr;
+}
+
 main().catch((e) => {
-    console.error('Sync failed:', e);
+    console.error('Sync failed after retries:', e);
     process.exit(1);
 });
