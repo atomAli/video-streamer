@@ -7,5 +7,7 @@
     "start:dev": "vercel dev",
     "deploy": "vercel --prod"
   },
-  "dependencies": {}
+  "dependencies": {
+    "basic-ftp": "^6.2.1"
+  }
 }
