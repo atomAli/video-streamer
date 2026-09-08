@@ -32,10 +32,62 @@
     function loadVideoList(onDone, onError) {
         var url = buildListUrl();
         if (!url) {
-            onError(new Error('GitHub config missing'));
+            onError(new Error('API config missing'));
             return;
         }
 
+        /* Try script injection first - same as the original Tizen app.
+           This works on old TV WebKit (2016) because <script> tags are not
+           subject to CORS. The endpoint responds with window.__CVP_VIDEOS__. */
+        if (getSource().listJsUrl) {
+            loadViaScript(onDone, onError);
+            return;
+        }
+
+        loadViaXhr(url, onDone, onError);
+    }
+
+    function loadViaScript(onDone, onError) {
+        var s = getSource();
+        var url = s.listJsUrl + '&_=' + Date.now();
+        var timedOut = false;
+
+        window.__CVP_VIDEOS__ = null;
+
+        function cleanup() {
+            clearTimeout(timer);
+            tag.onload = null;
+            tag.onerror = null;
+            if (tag.parentNode) { tag.parentNode.removeChild(tag); }
+        }
+
+        function handle() {
+            if (timedOut) { return; }
+            var entries = window.__CVP_VIDEOS__;
+            cleanup();
+            window.__CVP_VIDEOS__ = null;
+            onDone(normalizeEntries(entries));
+        }
+
+        var timer = setTimeout(function () {
+            timedOut = true;
+            cleanup();
+            onError(new Error('Timeout'));
+        }, 15000);
+
+        var tag = document.createElement('script');
+        tag.type = 'text/javascript';
+        tag.src = url;
+        tag.onload = handle;
+        tag.onerror = function () {
+            if (timedOut) { return; }
+            cleanup();
+            onError(new Error('Network error'));
+        };
+        (document.head || document.documentElement).appendChild(tag);
+    }
+
+    function loadViaXhr(url, onDone, onError) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
         xhr.timeout = 15000;
@@ -54,14 +106,8 @@
             }
         };
 
-        xhr.onerror = function () {
-            onError(new Error('Network error'));
-        };
-
-        xhr.ontimeout = function () {
-            onError(new Error('Timeout'));
-        };
-
+        xhr.onerror = function () { onError(new Error('Network error')); };
+        xhr.ontimeout = function () { onError(new Error('Timeout')); };
         xhr.send();
     }
 
@@ -181,6 +227,40 @@
                 listEl.appendChild(item);
             })(i);
         }
+
+        applyFocus();
+    }
+
+    function applyFocus() {
+        var items = listEl.children;
+        for (var i = 0; i < items.length; i++) {
+            var el = items[i];
+            if (videos[i] && videos[i].header) {
+                el.className = 'list-header';
+                continue;
+            }
+            var cls = el.className.replace(/ focused/g, '');
+            if (i === focusedIndex) {
+                el.className = cls + ' focused';
+            } else {
+                el.className = cls;
+            }
+        }
+        if (items.length > 0 && items[focusedIndex]) {
+            ensureVisible(items[focusedIndex]);
+        }
+    }
+
+    function ensureVisible(el) {
+        var top = el.offsetTop;
+        var bottom = top + el.offsetHeight;
+        var viewTop = listEl.scrollTop;
+        var viewBottom = viewTop + listEl.clientHeight;
+        if (top < viewTop) {
+            listEl.scrollTop = top;
+        } else if (bottom > viewBottom) {
+            listEl.scrollTop = bottom - listEl.clientHeight;
+        }
     }
 
     function playIndex(idx) {
@@ -279,6 +359,68 @@
         }
     }
 
+    var KEY_ENTER = 13;
+    var KEY_UP = 38;
+    var KEY_DOWN = 40;
+    var KEY_LEFT = 37;
+    var KEY_RIGHT = 39;
+    var KEY_BACK_TIZEN = 10009;
+    var KEY_BACK_MEDIA = 461;
+    var KEY_ESC = 27;
+    var KEY_SPACE = 32;
+    var KEY_PLAY = 415;
+    var KEY_PLAYPAUSE = 10252;
+    var KEY_STOP = 413;
+    var KEY_EXIT = 403;
+
+    function onKeyDown(e) {
+        var key = e.keyCode || e.which;
+
+        if (state === 'list') {
+            var n = videos.length;
+            if (n === 0) { return; }
+            if (key === KEY_UP) {
+                focusedIndex = (focusedIndex - 1 + n) % n;
+                applyFocus();
+            } else if (key === KEY_DOWN) {
+                focusedIndex = (focusedIndex + 1) % n;
+                applyFocus();
+            } else if (key === KEY_ENTER || key === KEY_PLAY || key === KEY_PLAYPAUSE) {
+                var focusIdx = focusedIndex;
+                if (document.activeElement && document.activeElement.getAttribute) {
+                    var attr = document.activeElement.getAttribute('data-index');
+                    if (attr !== null && attr !== undefined) {
+                        focusIdx = parseInt(attr, 10);
+                    }
+                }
+                playIndex(focusIdx);
+            } else if (key === KEY_ESC || key === KEY_BACK_MEDIA) {
+                /* stay */
+            }
+            if (key >= KEY_UP && key <= KEY_RIGHT) {
+                e.preventDefault();
+            }
+        } else if (state === 'player') {
+            if (key === KEY_BACK_TIZEN || key === KEY_BACK_MEDIA || key === KEY_ESC || key === KEY_STOP || key === KEY_EXIT) {
+                e.preventDefault();
+                exitPlayer();
+            } else if (key === KEY_ENTER || key === KEY_SPACE || key === KEY_PLAY || key === KEY_PLAYPAUSE) {
+                VideoPlayer.togglePlayPause();
+            } else if (key === KEY_RIGHT) {
+                VideoPlayer.seekForward();
+            } else if (key === KEY_LEFT) {
+                VideoPlayer.seekBackward();
+            } else if (key === KEY_UP) {
+                VideoPlayer.volumeUp();
+            } else if (key === KEY_DOWN) {
+                VideoPlayer.volumeDown();
+            }
+            if (key !== KEY_BACK_TIZEN) {
+                VideoPlayer.showControls();
+            }
+        }
+    }
+
     function onDomReady(fn) {
         if (document.readyState === 'complete' || document.readyState === 'interactive') {
             fn();
@@ -303,6 +445,7 @@
         });
 
         wireButtons();
+        window.addEventListener('keydown', onKeyDown, false);
         onDomReady(boot);
     }
 

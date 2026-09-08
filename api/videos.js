@@ -1,7 +1,9 @@
 /*
- * GET /api/videos - returns the video list from GitHub videos.json.
- * Sets long cache headers so repeated page loads are fast,
- * but the Telegram bot invalidates via GitHub raw timestamps.
+ * GET /api/videos
+ *   Default: returns JSON { videos: [...] } for modern browsers (XHR/fetch).
+ *   ?callback=name : returns JS that calls window.__CVP_VIDEOS__ = [...] for
+ *                    old TV browsers (2016 WebKit) that load it via <script>
+ *                    injection (no CORS, like the original Tizen app).
  */
 
 const GITHUB_API = 'https://api.github.com';
@@ -12,34 +14,40 @@ export default async function handler(req, res) {
         const repo = process.env.GITHUB_REPO || 'video-streamer';
         const branch = process.env.GITHUB_BRANCH || 'main';
 
-        if (!owner) {
-            return res.status(500).json({ error: 'GITHUB_OWNER not set', videos: [] });
-        }
+        let videos = [];
+        if (owner) {
+            const url = `${GITHUB_API}/repos/${owner}/${repo}/contents/videos.json?ref=${branch}`;
+            const ghRes = await fetch(url, {
+                headers: {
+                    'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+                    'Accept': 'application/vnd.github.v3+json'
+                }
+            });
 
-        const url = `${GITHUB_API}/repos/${owner}/${repo}/contents/videos.json?ref=${branch}`;
-        const ghRes = await fetch(url, {
-            headers: {
-                'Authorization': `token ${process.env.GITHUB_TOKEN}`,
-                'Accept': 'application/vnd.github.v3+json'
+            if (ghRes.status === 404) {
+                videos = [];
+            } else if (ghRes.ok) {
+                const file = await ghRes.json();
+                const decoded = Buffer.from(file.content, 'base64').toString('utf-8');
+                videos = JSON.parse(decoded);
+            } else {
+                throw new Error(`GitHub fetch failed: ${ghRes.status}`);
             }
-        });
-
-        if (ghRes.status === 404) {
-            return res.status(200).json({ videos: [] });
         }
-
-        if (!ghRes.ok) {
-            throw new Error(`GitHub fetch failed: ${ghRes.status}`);
-        }
-
-        const file = await ghRes.json();
-        const decoded = Buffer.from(file.content, 'base64').toString('utf-8');
-        const videos = JSON.parse(decoded);
 
         res.setHeader('Cache-Control', 'no-store');
+
+        const callback = req.query && req.query.callback;
+        if (callback) {
+            res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+            const json = JSON.stringify({ videos });
+            return res.status(200).send(`window.__CVP_VIDEOS__=${json};`);
+        }
+
         return res.status(200).json({ videos });
     } catch (err) {
         console.error('videos endpoint error:', err.message);
-        return res.status(500).json({ error: 'Failed to load videos', videos: [] });
+        res.setHeader('Cache-Control', 'no-store');
+        return res.status(200).json({ videos: [] });
     }
 }

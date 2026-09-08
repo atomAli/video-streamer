@@ -4,6 +4,7 @@
  */
 window.APP_CONFIG = {
     api: {
-        listUrl: '/api/videos'
+        listUrl: '/api/videos',
+        listJsUrl: '/api/videos?callback=__CVP__'
     }
 };
