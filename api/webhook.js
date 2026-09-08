@@ -295,6 +295,18 @@ async function handleCallback(config, cb) {
     }
 }
 
+function readBody(req) {
+    return new Promise((resolve, reject) => {
+        let data = '';
+        req.on('data', (chunk) => { data += chunk; });
+        req.on('end', () => {
+            try { resolve(JSON.parse(data || '{}')); }
+            catch (e) { reject(e); }
+        });
+        req.on('error', reject);
+    });
+}
+
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
         return res.status(200).json({ ok: true });
@@ -303,7 +315,7 @@ export default async function handler(req, res) {
     const config = getConfig();
 
     try {
-        const update = req.body;
+        const update = await readBody(req).catch(() => req.body || {});
 
         if (update.callback_query) {
             await handleCallback(config, update.callback_query);
