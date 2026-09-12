@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>فیلم‌ها</title>
+    <link rel="stylesheet" href="../css/style.css?v=7">
+</head>
+<body>
+
+    <!-- Loading indicator -->
+    <div id="loading" class="center-screen hidden">
+        <div class="spinner"></div>
+        <div id="loading-text" class="loading-text">Loading...</div>
+    </div>
+
+    <!-- Fatal error screen -->
+    <div id="error" class="center-screen hidden">
+        <div class="error-icon">&#9888;</div>
+        <div id="error-message" class="error-message">Something went wrong</div>
+        <div class="error-hint">Press RETURN to close the app</div>
+    </div>
+
+    <!-- List view -->
+    <div id="list-view" class="view hidden">
+        <div class="header">
+            <button id="btn-back" class="ctrl-btn ctrl-back">Back</button>
+            <div id="header-title" class="header-title">فیلم‌ها</div>
+            <div id="video-count" class="header-count"></div>
+        </div>
+        <div id="video-list" class="list"></div>
+    </div>
+
+    <!-- Player view -->
+    <div id="player-view" class="view hidden">
+        <video id="video-player" class="video" webkit-playsinline playsinline></video>
+
+        <div id="player-loading" class="player-loading hidden">
+            <div class="spinner"></div>
+            <div id="player-loading-text" class="player-loading-text"></div>
+        </div>
+
+        <div id="osd" class="osd">
+            <div class="osd-top">
+                <div id="osd-title" class="osd-title"></div>
+                <button id="btn-exit" class="ctrl-btn ctrl-back">Exit</button>
+            </div>
+            <div id="osd-progress" class="osd-progress">
+                <div id="osd-buffer-bar" class="osd-buffer-bar"></div>
+                <div id="osd-progress-bar" class="osd-progress-bar"></div>
+            </div>
+            <div class="osd-row">
+                <button id="btn-rew" class="ctrl-btn">-10s</button>
+                <button id="btn-play" class="ctrl-btn ctrl-play">Pause</button>
+                <button id="btn-fwd" class="ctrl-btn">+10s</button>
+                <button id="btn-voldn" class="ctrl-btn">Vol -</button>
+                <button id="btn-volup" class="ctrl-btn">Vol +</button>
+                <span id="osd-time" class="osd-time">0:00 / 0:00</span>
+                <span id="osd-buffer" class="osd-time osd-buffer"></span>
+            </div>
+        </div>
+
+        <div id="player-error" class="osd-error hidden">
+            <div id="player-error-message" class="osd-error-message">Could not play this video</div>
+            <div class="osd-error-hint">Press RETURN to go back</div>
+        </div>
+    </div>
+
+    <script src="../js/player.js?v=7"></script>
+        <script>window.__CVP_FILMS_INLINE__ = __CVP_FILMS_INLINE_DATA__;</script>
+    <script src="../js/film.js?v=5"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+name: Sync movies/serials.json → host TV app
+
+on:
+  push:
+    paths:
+      - 'movies.json'
+      - 'serials.json'
+      - 'scripts/build-tv.js'
+      - 'scripts/sync-host-tv.js'
+      - 'templates/**'
+      - '.github/workflows/sync-tv.yml'
+  schedule:
+    # every day at 06:15 UTC (right after the serials scraper at 06:00)
+    - cron: "15 6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: sync-tv
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build TV app files from movies.json/serials.json
+        run: node scripts/build-tv.js
+
+      - name: Upload to host via FTP (both /tv and /public_html/tv)
+        run: node scripts/sync-host-tv.js
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
