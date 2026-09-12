@@ -18,6 +18,7 @@
     var playerLoading = null;
     var playerLoadingText = null;
     var playerError = null;
+    var playerErrorMsg = null;
 
     var currentTitle = '';
     var endedCallback = null;
@@ -121,6 +122,7 @@
             playerLoading = document.getElementById('player-loading');
             playerLoadingText = document.getElementById('player-loading-text');
             playerError = document.getElementById('player-error');
+            playerErrorMsg = playerError ? playerError.querySelector('.osd-error-message') : null;
 
             video.addEventListener('timeupdate', updateProgress);
             video.addEventListener('durationchange', updateProgress);
@@ -141,9 +143,20 @@
             });
 
             video.addEventListener('error', function () {
-                if (playerError) {
-                    playerError.classList.remove('hidden');
+                if (!playerError) { return; }
+                var err = video && video.error;
+                if (err && err.code === 1) { /* MEDIA_ERR_ABORTED: user/navigation aborted load, not a failure */ return; }
+                var msg = 'Could not play this video';
+                if (err && err.code) {
+                    var reason = {
+                        2: 'Network error',
+                        3: 'Codec not supported',
+                        4: 'Source not supported'
+                    }[err.code] || ('Error ' + err.code);
+                    msg = 'Could not play this video (' + reason + ')';
                 }
+                if (playerErrorMsg) { playerErrorMsg.textContent = msg; }
+                playerError.classList.remove('hidden');
             });
 
             video.addEventListener('play', function () {
@@ -182,6 +195,7 @@
             currentTitle = title || '';
             if (osdTitle) { osdTitle.textContent = currentTitle; }
             if (playerError) { playerError.classList.add('hidden'); }
+            if (playerErrorMsg) { playerErrorMsg.textContent = 'Could not play this video'; }
             hideLoading();
             if (osdTime) { osdTime.textContent = '0:00 / 0:00'; }
             if (osdBufferedBar) { osdBufferedBar.style.width = '0%'; }

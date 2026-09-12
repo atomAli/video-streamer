@@ -4,7 +4,8 @@
 (function () {
     'use strict';
 
-    var CACHE_KEY = 'streamer_videos_v1';
+    var CACHE_KEY = 'streamer_videos_v2';
+    var CACHE_TTL_MS = 6 * 60 * 60 * 1000;
 
     var state = 'boot';
     var videos = [];
@@ -113,8 +114,17 @@
 
     function normalizeEntries(entries) {
         var files = [];
-        if (!(entries instanceof Array)) {
+        if (!entries) {
             return files;
+        }
+        /* API responds with { videos: [...] }; FTP videos.js responds with an
+           array of groups [{name, videos}, ...]. Accept both. */
+        if (!(entries instanceof Array)) {
+            if (entries.videos instanceof Array) {
+                entries = entries.videos;
+            } else {
+                return files;
+            }
         }
         for (var i = 0; i < entries.length; i++) {
             var e = entries[i];
@@ -138,14 +148,18 @@
 
     function saveCache(files) {
         try {
-            window.localStorage.setItem(CACHE_KEY, JSON.stringify(files));
+            window.localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), files: files }));
         } catch (e) { /* noop */ }
     }
 
     function loadCache() {
         try {
             var raw = window.localStorage.getItem(CACHE_KEY);
-            return raw ? JSON.parse(raw) : null;
+            if (!raw) { return null; }
+            var obj = JSON.parse(raw);
+            if (!obj || !(obj.files instanceof Array)) { return null; }
+            if (Date.now() - (obj.ts || 0) > CACHE_TTL_MS) { return null; }
+            return obj.files;
         } catch (e) {
             return null;
         }
@@ -304,6 +318,9 @@
             saveCache(files);
         }, function (err) {
             if (state === 'list') {
+                if (countEl && countEl.textContent) {
+                    countEl.textContent += ' (offline, showing cache)';
+                }
                 return;
             }
             var msg = 'Could not load videos.\n';
