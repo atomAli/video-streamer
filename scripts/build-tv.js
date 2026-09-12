@@ -74,6 +74,11 @@ function main() {
     write('panel-data/films.js', 'window.__CVP_FILMS__ = ' + moviesPretty);
     write('panel-data/films.json', moviesPretty);
 
+    // Static pages/assets (menu + test page)
+    write('index.html', fs.readFileSync(path.join(ROOT, 'templates', 'index.html'), 'utf-8'));
+    write('test/index.html', fs.readFileSync(path.join(ROOT, 'templates', 'test_index.html'), 'utf-8'));
+    write('js/test.js', fs.readFileSync(path.join(ROOT, 'templates', 'test.js'), 'utf-8'));
+
     console.log(`\nDone. Output: ${DIST}`);
 }
 
