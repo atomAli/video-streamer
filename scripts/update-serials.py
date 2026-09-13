@@ -51,7 +51,16 @@ def get_show_links_from_archive(html):
 
 
 def get_episodes_from_show(html):
-    """Extract episode title+URL pairs from a show page (main episodes section only)."""
+    """Extract episode title+URL pairs from a show page (main episodes section only).
+
+    An episode appears twice: once as a poster block
+        <a href=".../episode/X/" class="...masvideos-LoopEpisode-link..."><picture>...</picture></a>
+    and once as the title block
+        <a href=".../episode/X/" class="...masvideos-LoopEpisode-link...">
+            <h3 class="masvideos-loop-episode__title ...">Title</h3></a>
+    so the anchor is NOT directly followed by the <h3>. Match each episode URL
+    in the section, then take the first following episode title.
+    """
     idx = html.find('class="episodes columns-6"')
     if idx == -1:
         return []
@@ -62,18 +71,22 @@ def get_episodes_from_show(html):
 
     episodes = []
     seen = set()
-    for m in re.finditer(
-        r'<a href="(https://ispanechannel\.it\.com/episode/[^"#]+)" '
-        r'class="masvideos-LoopEpisode-link[^"]*">\s*'
-        r'<h3 class="masvideos-loop-episode__title\s+episode__title">(.*?)</h3>',
-        segment,
-        re.S,
-    ):
-        url = m.group(1).rstrip("/")
-        title = re.sub(r"<[^>]+>", "", m.group(2)).strip()
-        if url not in seen:
-            seen.add(url)
-            episodes.append((title, url))
+    for m in re.finditer(r'https://ispanechannel\.it\.com/episode/[^"#]+', segment):
+        url = m.group(0).rstrip("/")
+        if url in seen:
+            continue
+        seen.add(url)
+        title_m = re.search(
+            r'<a href="' + re.escape(url) + r'/?"[^>]*>.*?'
+            r'<h3[^>]*class="[^"]*masvideos-loop-episode__title[^"]*"[^>]*>(.*?)</h3>',
+            segment,
+            re.S,
+        )
+        if title_m:
+            title = re.sub(r"<[^>]+>", "", title_m.group(1)).strip()
+        else:
+            title = url.rsplit("/", 1)[-1].replace("-", " ").title()
+        episodes.append((title, url))
     return episodes
 
 
@@ -192,14 +205,31 @@ async def main():
         stream_tasks = [fill_streams(session, sem, entry) for entry in new.values()]
         await asyncio.gather(*stream_tasks)
 
-        # 5) merge: preserve key order of old, then new shows
+        # 5) merge: preserve key order of old, then new shows. If a scrape
+        #    returns no episodes for a show that previously had some, keep the
+        #    old episodes instead of silently wiping them (the site is likely
+        #    malformed/blocked in that run).
         merged = {}
         for title in old:
             if title in new:
-                merged[title] = new[title]
+                entry = new[title]
+                if not entry.get("episodes") and old[title].get("episodes"):
+                    entry["episodes"] = old[title]["episodes"]
+                merged[title] = entry
         for title, entry in new.items():
             if title not in merged:
                 merged[title] = entry
+
+        # 6) sanity guards: never write a broken dataset
+        if len(merged) < 5:
+            print(f"Aborting: only {len(merged)} shows scraped (expected >=5); "
+                  "refusing to overwrite serials.json.", file=sys.stderr)
+            sys.exit(1)
+        ep_count = sum(len(e.get("episodes") or []) for e in merged.values())
+        if ep_count == 0:
+            print("Aborting: zero episodes scraped; refusing to overwrite serials.json.",
+                  file=sys.stderr)
+            sys.exit(1)
 
         output = json.dumps(merged, ensure_ascii=False, indent=2) + "\n"
 

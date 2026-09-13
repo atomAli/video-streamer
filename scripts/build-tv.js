@@ -58,8 +58,22 @@ function main() {
     const serials = readJson('serials.json');
     const movies = readJson('movies.json');
 
-    console.log(`Serials: ${Object.keys(serials).length} shows`);
-    console.log(`Movies:  ${Object.keys(movies).length} films`);
+    const serialShows = Object.keys(serials).length;
+    const serialEps = Object.values(serials).reduce(
+        (n, s) => n + (Array.isArray(s.episodes) ? s.episodes.length : 0), 0
+    );
+    const filmCount = Object.keys(movies).length;
+    if (serialShows === 0 || serialEps === 0) {
+        throw new Error(
+            `Refusing to build: serials.json has ${serialShows} shows / ${serialEps} episodes. ` +
+            'Deploying this would blank the series list.');
+    }
+    if (filmCount === 0) {
+        throw new Error('Refusing to build: movies.json is empty.');
+    }
+
+    console.log(`Serials: ${serialShows} shows / ${serialEps} episodes`);
+    console.log(`Movies:  ${filmCount} films`);
 
     const serialsPretty = pretty(serials);
     const moviesPretty = pretty(movies);
