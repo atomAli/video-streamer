@@ -2248,6 +2248,13 @@
     "show_url": "https://ispanechannel.it.com/tv-show/asbabe-zahmat-serial",
     "episodes": [
       {
+        "title": "Asbabe Zahmat Ghesmate 13",
+        "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-13",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/asbabe/Zahmat-E13.mp4"
+        ]
+      },
+      {
         "title": "Asbabe Zahmat Ghesmate 12",
         "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-12",
         "streams": [
@@ -2416,6 +2423,13 @@
   "Bamdade Khomar": {
     "show_url": "https://ispanechannel.it.com/tv-show/bamdade-khomar",
     "episodes": [
+      {
+        "title": "Bamdade Khomar Part 13",
+        "url": "https://ispanechannel.it.com/episode/bamdade-khomar-part-13",
+        "streams": [
+          "https://stream.farsicdn.co/serials/bamdade/Khomar-E13.mp4"
+        ]
+      },
       {
         "title": "Bamdade Khomar Part 12",
         "url": "https://ispanechannel.it.com/episode/bamdade-khomar-part-12",
@@ -2653,6 +2667,11 @@
         ]
       },
       {
+        "title": "Shefrooni S2 Part 5",
+        "url": "https://ispanechannel.it.com/episode/shefrooni-s2-part-5",
+        "streams": []
+      },
+      {
         "title": "Shefrooni S2 Part 4",
         "url": "https://ispanechannel.it.com/episode/shefrooni-s2-part-4",
         "streams": [
@@ -2685,6 +2704,13 @@
   "Ham Kalam": {
     "show_url": "https://ispanechannel.it.com/tv-show/ham-kalam",
     "episodes": [
+      {
+        "title": "Ham Kalam Part 5",
+        "url": "https://ispanechannel.it.com/episode/ham-kalam-part-5",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/ham-kalam/Ham-Kalam-E05.mp4"
+        ]
+      },
       {
         "title": "Ham Kalam Part 4",
         "url": "https://ispanechannel.it.com/episode/ham-kalam-part-4",
@@ -2790,14 +2816,14 @@
         "title": "Kankel Ghesmate 4",
         "url": "https://ispanechannel.it.com/episode/kankel-ghesmate-4",
         "streams": [
-          "https://stream.farsicdn.co/serials/cankel/Kankel-E04.mp4"
+          "https://stream.farsicdn.co/serials2/kankel/Cancel-E04.mp4"
         ]
       },
       {
         "title": "Kankel Ghesmate 3",
         "url": "https://ispanechannel.it.com/episode/kankel-ghesmate-3",
         "streams": [
-          "https://stream.farsicdn.co/serials/cankel/Kankel-E03.mp4"
+          "https://stream.farsicdn.co/serials2/kankel/Cancel-E03.mp4"
         ]
       },
       {
@@ -2887,6 +2913,13 @@
         "url": "https://ispanechannel.it.com/episode/kalaq-part-10",
         "streams": [
           "https://stream.farsicdn.co/serials2/kalagh/Kalaq-E10.mp4"
+        ]
+      },
+      {
+        "title": "Kalaq Part 11",
+        "url": "https://ispanechannel.it.com/episode/kalaq-part-11",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/kalagh/Kalaq-E11.mp4"
         ]
       }
     ]
@@ -2983,6 +3016,13 @@
   "Bist va Yek Serial": {
     "show_url": "https://ispanechannel.it.com/tv-show/bist-va-yek-serial",
     "episodes": [
+      {
+        "title": "Bist va Yek Part 15",
+        "url": "https://ispanechannel.it.com/episode/bist-va-yek-part-15",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/21/Bist-Va-Yek-E15.mp4"
+        ]
+      },
       {
         "title": "Bist va Yek Part 14",
         "url": "https://ispanechannel.it.com/episode/bist-va-yek-part-14",
@@ -4333,6 +4373,13 @@
     "show_url": "https://ispanechannel.it.com/tv-show/gole-sang",
     "episodes": [
       {
+        "title": "Gole Sang Part 10",
+        "url": "https://ispanechannel.it.com/episode/gole-sang-part-10",
+        "streams": [
+          "https://stream.farsicdn.co/serials/gole-sang/Gole-Sang-E10.mp4"
+        ]
+      },
+      {
         "title": "Gole Sang Part 9",
         "url": "https://ispanechannel.it.com/episode/gole-sang-part-9",
         "streams": [
@@ -4400,6 +4447,13 @@
   "Bi Atefe": {
     "show_url": "https://ispanechannel.it.com/tv-show/bi-atefe",
     "episodes": [
+      {
+        "title": "Bi Atefe Part 15",
+        "url": "https://ispanechannel.it.com/episode/bi-atefe-part-15",
+        "streams": [
+          "https://stream.farsicdn.co/serials/bi-atefe/Biatefe-E15.mp4"
+        ]
+      },
       {
         "title": "Bi Atefe Part 14",
         "url": "https://ispanechannel.it.com/episode/bi-atefe-part-14",
@@ -4965,6 +5019,83 @@
         ]
       },
       {
+        "title": "Haft Part 11",
+        "url": "https://ispanechannel.it.com/episode/haft-part-11",
+        "streams": [
+          "https://stream.farsicdn.co/serials/haft/Haft-E11.mp4"
+        ]
+      },
+      {
+        "title": "Haft Serial 10",
+        "url": "https://ispanechannel.it.com/episode/haft-serial-10",
+        "streams": [
+          "https://stream.farsicdn.co/serials/haft/Haft-E10.mp4"
+        ]
+      },
+      {
+        "title": "Haft Serial 9",
+        "url": "https://ispanechannel.it.com/episode/haft-serial-9",
+        "streams": [
+          "https://stream.farsicdn.co/serials/haft/Haft-E09.mp4"
+        ]
+      },
+      {
+        "title": "Haft Episode 8",
+        "url": "https://ispanechannel.it.com/episode/haft-episode-8",
+        "streams": [
+          "https://stream.farsicdn.co/serials/haft/Haft-E08.mp4"
+        ]
+      },
+      {
+        "title": "Haft Serial 7",
+        "url": "https://ispanechannel.it.com/episode/haft-serial-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials/haft/Haft-E07.mp4"
+        ]
+      },
+      {
+        "title": "Haft Serial 6",
+        "url": "https://ispanechannel.it.com/episode/haft-serial-6",
+        "streams": [
+          "https://stream.farsicdn.co/serials/haft/Haft-E06.mp4"
+        ]
+      },
+      {
+        "title": "Haft Serial 5",
+        "url": "https://ispanechannel.it.com/episode/haft-serial-5",
+        "streams": [
+          "https://stream.farsicdn.co/serials/haft/Haft-E05.mp4"
+        ]
+      },
+      {
+        "title": "Haft Serial 4",
+        "url": "https://ispanechannel.it.com/episode/haft-serial-4",
+        "streams": [
+          "https://stream.farsicdn.co/serials/haft/Haft-E04.mp4"
+        ]
+      },
+      {
+        "title": "Haft Episode 3",
+        "url": "https://ispanechannel.it.com/episode/haft-episode-3",
+        "streams": [
+          "https://stream.farsicdn.co/serials/haft/Haft-E03.mp4"
+        ]
+      },
+      {
+        "title": "Haft Serial 2",
+        "url": "https://ispanechannel.it.com/episode/haft-serial-2",
+        "streams": [
+          "https://stream.farsicdn.co/serials/haft/Haft-E02.mp4"
+        ]
+      },
+      {
+        "title": "Haft Episode 1",
+        "url": "https://ispanechannel.it.com/episode/haft-episode-1",
+        "streams": [
+          "https://stream.farsicdn.co/serials/haft/Haft-E01.mp4"
+        ]
+      },
+      {
         "title": "Haft Serial Anoos",
         "url": "https://ispanechannel.it.com/episode/haft-serial-anoos",
         "streams": [
@@ -5333,6 +5464,13 @@
     "show_url": "https://ispanechannel.it.com/tv-show/moo-be-moo",
     "episodes": [
       {
+        "title": "Moo Be Moo Part 12 Ghesmate Akhar",
+        "url": "https://ispanechannel.it.com/episode/moo-be-moo-part-12",
+        "streams": [
+          "https://stream.farsicdn.co/serials/moobemoo/Moo-be-Moo-E12.mp4"
+        ]
+      },
+      {
         "title": "Moo Be Moo Part 11",
         "url": "https://ispanechannel.it.com/episode/moo-be-moo-part-11",
         "streams": [
@@ -5414,6 +5552,13 @@
   "Gol Ya Pooch Persian Serial": {
     "show_url": "https://ispanechannel.it.com/tv-show/gol-ya-pooch-persian-serial",
     "episodes": [
+      {
+        "title": "Gol Ya Pooch Ghesmate 12",
+        "url": "https://ispanechannel.it.com/episode/gol-ya-pooch-ghesmate-12",
+        "streams": [
+          "https://stream.farsicdn.co/serials/gol-ya/Pooch-E12.mp4"
+        ]
+      },
       {
         "title": "Gol Ya Pooch Ghesmate 11",
         "url": "https://ispanechannel.it.com/episode/gol-ya-pooch-ghesmate-11",
@@ -5635,6 +5780,13 @@
         "streams": []
       },
       {
+        "title": "Vahshi S2 Part 12",
+        "url": "https://ispanechannel.it.com/episode/vahshi-s2-part-12",
+        "streams": [
+          "https://stream.farsicdn.co/serials/vahshi/Vahshi-S2E12.mp4"
+        ]
+      },
+      {
         "title": "Vahshi S2 Part 11",
         "url": "https://ispanechannel.it.com/episode/vahshi-s2-part-11",
         "streams": [
@@ -5716,6 +5868,13 @@
   "Breta Dastane Yek Aslahe": {
     "show_url": "https://ispanechannel.it.com/tv-show/breta-dastane-yek-aslahe",
     "episodes": [
+      {
+        "title": "Bareta Part 18",
+        "url": "https://ispanechannel.it.com/episode/bareta-part-18",
+        "streams": [
+          "https://stream.farsicdn.co/serials/berete/dastane-E18.mp4"
+        ]
+      },
       {
         "title": "Bareta Part 17",
         "url": "https://ispanechannel.it.com/episode/bareta-part-17",
@@ -6362,6 +6521,13 @@
     "show_url": "https://ispanechannel.it.com/tv-show/30672",
     "episodes": [
       {
+        "title": "Shish Mahe Ghesmate 16",
+        "url": "https://ispanechannel.it.com/episode/shish-mahe-ghesmate-16",
+        "streams": [
+          "https://stream.farsicdn.co/serials/shish-mahe/Shish-Mahe-E16.mp4"
+        ]
+      },
+      {
         "title": "Shish Mahe Ghesmate 15",
         "url": "https://ispanechannel.it.com/episode/shish-mahe-ghesmate-15",
         "streams": [
@@ -6471,6 +6637,13 @@
   "Mahkoom Serial": {
     "show_url": "https://ispanechannel.it.com/tv-show/mahkoom-serial",
     "episodes": [
+      {
+        "title": "Mahkoom Part 22",
+        "url": "https://ispanechannel.it.com/episode/mahkoom-part-22",
+        "streams": [
+          "https://stream.farsicdn.co/serials/mahkoom/mahkoom-E22.mp4"
+        ]
+      },
       {
         "title": "Mahkoom Part 21",
         "url": "https://ispanechannel.it.com/episode/mahkoom-part-21",
@@ -6623,6 +6796,13 @@
   "Shoghal Serial": {
     "show_url": "https://ispanechannel.it.com/tv-show/shuoghal-serial",
     "episodes": [
+      {
+        "title": "Shoghal Part 23",
+        "url": "https://ispanechannel.it.com/episode/shoghal-part-23",
+        "streams": [
+          "https://stream.farsicdn.co/serials/shoghal/Shoqal-E23.mp4"
+        ]
+      },
       {
         "title": "Shoghal Part 22",
         "url": "https://ispanechannel.it.com/episode/shoghal-part-22",
@@ -7744,6 +7924,13 @@
     "show_url": "https://ispanechannel.it.com/tv-show/nimee-shabb",
     "episodes": [
       {
+        "title": "Nime Shab S4 Part 26",
+        "url": "https://ispanechannel.it.com/episode/nimee-shabb-s4-part-26",
+        "streams": [
+          "https://stream.farsicdn.co/serials/nime-shab/NimehShab-S04E26.mp4"
+        ]
+      },
+      {
         "title": "Nime Shab S4 Part 25",
         "url": "https://ispanechannel.it.com/episode/nimee-shabb-s4-part-25",
         "streams": [
@@ -8630,6 +8817,13 @@
     "show_url": "https://ispanechannel.it.com/tv-show/sushoon-serial",
     "episodes": [
       {
+        "title": "Sooshoon Part 14",
+        "url": "https://ispanechannel.it.com/episode/sooshoon-part-14",
+        "streams": [
+          "https://stream.farsicdn.co/serials/sooshoon/Sooshoon-E14.mp4"
+        ]
+      },
+      {
         "title": "Sooshoon Part 13",
         "url": "https://ispanechannel.it.com/episode/sushoon-part-13",
         "streams": [
@@ -9048,6 +9242,13 @@
   "Arezoohaye Chiki": {
     "show_url": "https://ispanechannel.it.com/tv-show/arezoohaye-chiki",
     "episodes": [
+      {
+        "title": "Arezoohaye Chiki Part 15",
+        "url": "https://ispanechannel.it.com/episode/arezoohaye-chiki-part-15",
+        "streams": [
+          "https://stream.farsicdn.co/serials/arezoohaye/Chiki-E15.mp4"
+        ]
+      },
       {
         "title": "Arezoohaye Chiki Part 14",
         "url": "https://ispanechannel.it.com/episode/arezoohaye-chiki-part-14",
