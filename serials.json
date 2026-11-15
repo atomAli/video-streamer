@@ -3,10 +3,66 @@
     "show_url": "https://ispanechannel.it.com/tv-show/roshan-show",
     "episodes": [
       {
-        "title": "Roshan Part 1",
-        "url": "https://ispanechannel.it.com/episode/roshan-part-1",
+        "title": "Roshan Part 11",
+        "url": "https://ispanechannel.it.com/episode/roshan-part-11",
         "streams": [
-          "https://stream.farsicdn.co/serials2/roshan/Roshan-E01.mp4"
+          "https://stream.farsicdn.co/serials2/roshan/Roshan-E11.mp4"
+        ]
+      },
+      {
+        "title": "Roshan Part 10",
+        "url": "https://ispanechannel.it.com/episode/roshan-part-10",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/roshan/Roshan-E10.mp4"
+        ]
+      },
+      {
+        "title": "Roshan Part 9",
+        "url": "https://ispanechannel.it.com/episode/roshan-part-9",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/roshan/Roshan-E09.mp4"
+        ]
+      },
+      {
+        "title": "Roshan Part 8",
+        "url": "https://ispanechannel.it.com/episode/roshan-part-8",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/roshan/Roshan-E08.mp4"
+        ]
+      },
+      {
+        "title": "Roshan Part 7",
+        "url": "https://ispanechannel.it.com/episode/roshan-part-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/roshan/Roshan-E07.mp4"
+        ]
+      },
+      {
+        "title": "Roshan Part 6",
+        "url": "https://ispanechannel.it.com/episode/roshan-part-6",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/roshan/Roshan-E06.mp4"
+        ]
+      },
+      {
+        "title": "Roshan Part 5",
+        "url": "https://ispanechannel.it.com/episode/roshan-part-5",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/roshan/Roshan-E05.mp4"
+        ]
+      },
+      {
+        "title": "Roshan Part 4",
+        "url": "https://ispanechannel.it.com/episode/roshan-part-4",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/roshan/Roshan-E04.mp4"
+        ]
+      },
+      {
+        "title": "Roshan Part 3",
+        "url": "https://ispanechannel.it.com/episode/roshan-part-3",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/roshan/Roshan-E03.mp4"
         ]
       },
       {
@@ -17,10 +73,10 @@
         ]
       },
       {
-        "title": "Roshan Part 3",
-        "url": "https://ispanechannel.it.com/episode/roshan-part-3",
+        "title": "Roshan Part 1",
+        "url": "https://ispanechannel.it.com/episode/roshan-part-1",
         "streams": [
-          "https://stream.farsicdn.co/serials2/roshan/Roshan-E03.mp4"
+          "https://stream.farsicdn.co/serials2/roshan/Roshan-E01.mp4"
         ]
       }
     ]
@@ -28,6 +84,69 @@
   "Aqaye Ghazi": {
     "show_url": "https://ispanechannel.it.com/tv-show/aqaye-ghazi",
     "episodes": [
+      {
+        "title": "Aqaye Ghazi Part 22",
+        "url": "https://ispanechannel.it.com/episode/aqaye-ghazi-part-22",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/aqaye/Qazi-E22.mp4"
+        ]
+      },
+      {
+        "title": "Aqaye Ghazi Part 21",
+        "url": "https://ispanechannel.it.com/episode/aqaye-ghazi-part-21",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/aqaye/Qazi-E21.mp4"
+        ]
+      },
+      {
+        "title": "Aqaye Ghazi Part 20",
+        "url": "https://ispanechannel.it.com/episode/aqaye-ghazi-part-20",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/aqaye/Qazi-E20.mp4"
+        ]
+      },
+      {
+        "title": "Aqaye Ghazi Part 19",
+        "url": "https://ispanechannel.it.com/episode/aqaye-ghazi-part-19",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/aqaye/Qazi-E19.mp4"
+        ]
+      },
+      {
+        "title": "Aqaye Ghazi Part 18",
+        "url": "https://ispanechannel.it.com/episode/aqaye-ghazi-part-18",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/aqaye/Qazi-E18.mp4"
+        ]
+      },
+      {
+        "title": "Aqaye Ghazi Part 17",
+        "url": "https://ispanechannel.it.com/episode/aqaye-ghazi-part-17",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/aqaye/Qazi-E17.mp4"
+        ]
+      },
+      {
+        "title": "Aqaye Ghazi Part 16",
+        "url": "https://ispanechannel.it.com/episode/aqaye-ghazi-part-16",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/aqaye/Qazi-E16.mp4"
+        ]
+      },
+      {
+        "title": "Aqaye Ghazi Part 15",
+        "url": "https://ispanechannel.it.com/episode/aqaye-ghazi-part-15",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/aqaye/Qazi-E15.mp4"
+        ]
+      },
+      {
+        "title": "Aqaye Ghazi Part 14",
+        "url": "https://ispanechannel.it.com/episode/aqaye-ghazi-part-14",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/aqaye/Qazi-E14.mp4"
+        ]
+      },
       {
         "title": "Aqaye Ghazi Part 13",
         "url": "https://ispanechannel.it.com/episode/aqaye-ghazi-part-13",
@@ -124,6 +243,55 @@
   "Marde 3 Hezar Chehre": {
     "show_url": "https://ispanechannel.it.com/tv-show/marde-3-hezar-chehre",
     "episodes": [
+      {
+        "title": "Marde Se Hezar Chehre Ghesmate 9",
+        "url": "https://ispanechannel.it.com/episode/marde-se-hezar-chehre-ghesmate-9",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/marde-3-hezar/Chehre-E09.mp4"
+        ]
+      },
+      {
+        "title": "Marde Se Hezar Chehre Ghesmate 8",
+        "url": "https://ispanechannel.it.com/episode/marde-se-hezar-chehre-ghesmate-8",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/marde-3-hezar/Chehre-E08.mp4"
+        ]
+      },
+      {
+        "title": "Marde Se Hezar Chehre Ghesmate 7",
+        "url": "https://ispanechannel.it.com/episode/marde-se-hezar-chehre-ghesmate-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/marde-3-hezar/Chehre-E07.mp4"
+        ]
+      },
+      {
+        "title": "Marde Se Hezar Chehre Ghesmate 6",
+        "url": "https://ispanechannel.it.com/episode/marde-se-hezar-chehre-ghesmate-6",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/marde-3-hezar/Chehre-E06.mp4"
+        ]
+      },
+      {
+        "title": "Marde Se Hezar Chehre Ghesmate 5",
+        "url": "https://ispanechannel.it.com/episode/marde-se-hezar-chehre-ghesmate-5",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/marde-3-hezar/Chehre-E05.mp4"
+        ]
+      },
+      {
+        "title": "Marde Se Hezar Chehre Ghesmate 4",
+        "url": "https://ispanechannel.it.com/episode/marde-se-hezar-chehre-ghesmate-4",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/marde-3-hezar/Chehre-E04.mp4"
+        ]
+      },
+      {
+        "title": "Marde Se Hezar Chehre Ghesmate 3",
+        "url": "https://ispanechannel.it.com/episode/marde-se-hezar-chehre-ghesmate-3",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/marde-3-hezar/Chehre-E03.mp4"
+        ]
+      },
       {
         "title": "Marde Se Hezar Chehre Ghesmate 2",
         "url": "https://ispanechannel.it.com/episode/marde-se-hezar-chehre-ghesmate-2",
@@ -1579,6 +1747,321 @@
         ]
       },
       {
+        "title": "Eshghe Abadi S3 Episode 100",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-100",
+        "streams": [
+          "https://www.youtube.com/embed/07RPZRtnvOU"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 99",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-99",
+        "streams": [
+          "https://www.youtube.com/embed/Zny1Vtf8ASo"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 98",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-98",
+        "streams": [
+          "https://www.youtube.com/embed/IFfORzzSYio"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 97",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-97",
+        "streams": [
+          "https://www.youtube.com/embed/QWaw3tbcFEc"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 96",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-96",
+        "streams": [
+          "https://www.youtube.com/embed/w3EdYWoDeLY"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 95",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-95",
+        "streams": [
+          "https://www.youtube.com/embed/Oj9zMA5AYng"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 94",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-94",
+        "streams": [
+          "https://www.youtube.com/embed/gamo2IQpOpY"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 93",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-93",
+        "streams": [
+          "https://www.youtube.com/embed/vUwIvqvveYE"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 92",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-92",
+        "streams": [
+          "https://www.youtube.com/embed/gPljSgW6wNQ"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 91",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-91",
+        "streams": [
+          "https://www.youtube.com/embed/CLrNNwDDWko"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 90",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-90",
+        "streams": [
+          "https://www.youtube.com/embed/00GLZuWk6mQ"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 89",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-89",
+        "streams": [
+          "https://www.youtube.com/embed/3JjtsvK-OPE"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 88",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-88",
+        "streams": [
+          "https://www.youtube.com/embed/gtvgLR7TLFY"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 87",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-87",
+        "streams": [
+          "https://www.youtube.com/embed/d1azJYyIxLE"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 86",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-86",
+        "streams": [
+          "https://www.youtube.com/embed/WAWkrTCkRSU"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 85",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-85",
+        "streams": [
+          "https://www.youtube.com/embed/jvGpithrnC4"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 84",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-84",
+        "streams": [
+          "https://www.youtube.com/embed/bd9_jkIt1J0"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 83",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-83",
+        "streams": [
+          "https://www.youtube.com/embed/hERRv4Fwd3E"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 82",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-82",
+        "streams": [
+          "https://www.youtube.com/embed/VTLpZ2fE8tg"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 81",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-81",
+        "streams": [
+          "https://www.youtube.com/embed/QcRATK-vMVo"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 80",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-80",
+        "streams": [
+          "https://www.youtube.com/embed/NcqOENigOAE"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 79",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-79",
+        "streams": [
+          "https://www.youtube.com/embed/pig-DS1V_Oc"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 78",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-78",
+        "streams": [
+          "https://www.youtube.com/embed/Il_2ZtjY77Y"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 77",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-77",
+        "streams": [
+          "https://www.youtube.com/embed/VXmpJ5xxRYs"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 76",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-76",
+        "streams": [
+          "https://www.youtube.com/embed/28TL7Rk6wUU"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 75",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-75",
+        "streams": [
+          "https://www.youtube.com/embed/Frsf1sO-QB0"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 74",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-74",
+        "streams": [
+          "https://www.youtube.com/embed/t7IXuZElrds"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 73",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-73",
+        "streams": [
+          "https://www.youtube.com/embed/_a6HODTf3xw"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 72",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-72",
+        "streams": [
+          "https://www.youtube.com/embed/qpT1Ut63rzY"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 71",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-71",
+        "streams": [
+          "https://www.youtube.com/embed/wr-q1gnnr7U"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 70",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-70",
+        "streams": [
+          "https://www.youtube.com/embed/JIySRAhGh84"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 69",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-69",
+        "streams": [
+          "https://www.youtube.com/embed/E7yOtW2ZmOc"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 68",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-68",
+        "streams": [
+          "https://www.youtube.com/embed/jXPG42ay4uk"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 67",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-67",
+        "streams": [
+          "https://www.youtube.com/embed/HhRRxJlgNqY"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 66",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-66",
+        "streams": [
+          "https://www.youtube.com/embed/jYk7jupR8fw"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 65",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-65",
+        "streams": [
+          "https://www.youtube.com/embed/QHIVdu_Uty4"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 64",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-64",
+        "streams": [
+          "https://www.youtube.com/embed/wpSzbsS1vCU"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 63",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-63",
+        "streams": [
+          "https://www.youtube.com/embed/uwRAZlPGyB8"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 62",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-62",
+        "streams": [
+          "https://www.youtube.com/embed/9xEgQaAkdME"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 61",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-61",
+        "streams": [
+          "https://www.youtube.com/embed/i7bTRHdpyJg"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 60",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-60",
+        "streams": [
+          "https://www.youtube.com/embed/dNUtxxXu_oc"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 59",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-59",
+        "streams": [
+          "https://www.youtube.com/embed/-rCqjeRS4sA"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 58",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-58",
+        "streams": [
+          "https://www.youtube.com/embed/HgVX0YKBNOs"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 57",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-57",
+        "streams": [
+          "https://www.youtube.com/embed/iqLQ9ncbZH0"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 56",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-56",
+        "streams": [
+          "https://www.youtube.com/embed/l_XwHcgUeVc"
+        ]
+      },
+      {
         "title": "Eshghe Abadi S3 Episode 55",
         "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-55",
         "streams": [
@@ -1969,6 +2452,62 @@
     "show_url": "https://ispanechannel.it.com/tv-show/nim-rokh",
     "episodes": [
       {
+        "title": "Nim Rokh Part 10",
+        "url": "https://ispanechannel.it.com/episode/nim-rokh-part-10",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/nim-rokh/Nim-Rokh-E10.mp4"
+        ]
+      },
+      {
+        "title": "Nim Rokh Part 9",
+        "url": "https://ispanechannel.it.com/episode/nim-rokh-part-9",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/nim-rokh/Nim-Rokh-E09.mp4"
+        ]
+      },
+      {
+        "title": "Nim Rokh Part 8",
+        "url": "https://ispanechannel.it.com/episode/nim-rokh-part-8",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/nim-rokh/Nim-Rokh-E08.mp4"
+        ]
+      },
+      {
+        "title": "Nim Rokh Part 7",
+        "url": "https://ispanechannel.it.com/episode/nim-rokh-part-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/nim-rokh/Nim-Rokh-E07.mp4"
+        ]
+      },
+      {
+        "title": "Nim Rokh Part 6",
+        "url": "https://ispanechannel.it.com/episode/nim-rokh-part-6",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/nim-rokh/Nim-Rokh-E06.mp4"
+        ]
+      },
+      {
+        "title": "Nim Rokh Part 5",
+        "url": "https://ispanechannel.it.com/episode/nim-rokh-part-5",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/nim-rokh/Nim-Rokh-E05.mp4"
+        ]
+      },
+      {
+        "title": "Nim Rokh Part 4",
+        "url": "https://ispanechannel.it.com/episode/nim-rokh-part-4",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/nim-rokh/Nim-Rokh-E04.mp4"
+        ]
+      },
+      {
+        "title": "Nim Rokh Part 3",
+        "url": "https://ispanechannel.it.com/episode/nim-rokh-part-3",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/nim-rokh/Nim-Rokh-E03.mp4"
+        ]
+      },
+      {
         "title": "Nim Rokh Part 2",
         "url": "https://ispanechannel.it.com/episode/nim-rokh-part-2",
         "streams": [
@@ -1987,6 +2526,20 @@
   "Kori": {
     "show_url": "https://ispanechannel.it.com/tv-show/kori",
     "episodes": [
+      {
+        "title": "Koori Part 12",
+        "url": "https://ispanechannel.it.com/episode/koori-part-12",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/koori/Koori-E12.mp4"
+        ]
+      },
+      {
+        "title": "Koori Part 11",
+        "url": "https://ispanechannel.it.com/episode/koori-part-11",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/koori/Koori-E11.mp4"
+        ]
+      },
       {
         "title": "Koori Part 10",
         "url": "https://ispanechannel.it.com/episode/koori-part-10",
@@ -2062,6 +2615,34 @@
   "Badnam Serial": {
     "show_url": "https://ispanechannel.it.com/tv-show/badnam-serial",
     "episodes": [
+      {
+        "title": "Badnam Part 27",
+        "url": "https://ispanechannel.it.com/episode/badnam-part-27",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/badnam/Badnam-E27.mp4"
+        ]
+      },
+      {
+        "title": "Badnam Part 26",
+        "url": "https://ispanechannel.it.com/episode/badnam-part-26",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/badnam/Badnam-E26.mp4"
+        ]
+      },
+      {
+        "title": "Badnam Part 25",
+        "url": "https://ispanechannel.it.com/episode/badnam-part-25",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/badnam/Badnam-E25.mp4"
+        ]
+      },
+      {
+        "title": "Badnam Part 24",
+        "url": "https://ispanechannel.it.com/episode/badnam-part-24",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/badnam/Badnam-E24.mp4"
+        ]
+      },
       {
         "title": "Badnam Part 23",
         "url": "https://ispanechannel.it.com/episode/badnam-part-23",
@@ -2229,10 +2810,59 @@
     "show_url": "https://ispanechannel.it.com/tv-show/21-rooz",
     "episodes": [
       {
-        "title": "21 Rooz Part 1",
-        "url": "https://ispanechannel.it.com/episode/21-rooz",
+        "title": "21 Rooz Part 10",
+        "url": "https://ispanechannel.it.com/episode/21-rooz-part-10",
         "streams": [
-          "https://stream.farsicdn.co/serials2/21-rooz/21-Rooz.mp4"
+          "https://stream.farsicdn.co/serials2/21-rooz/21-Rooz-E10.mp4"
+        ]
+      },
+      {
+        "title": "21 Rooz Part 9",
+        "url": "https://ispanechannel.it.com/episode/21-rooz-part-9",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/21-rooz/21-Rooz-E09.mp4"
+        ]
+      },
+      {
+        "title": "21 Rooz Part 8",
+        "url": "https://ispanechannel.it.com/episode/21-rooz-part-8",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/21-rooz/21-Rooz-E08.mp4"
+        ]
+      },
+      {
+        "title": "21 Rooz Part 7",
+        "url": "https://ispanechannel.it.com/episode/21-rooz-part-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/21-rooz/21-Rooz-E07.mp4"
+        ]
+      },
+      {
+        "title": "21 Rooz Part 6",
+        "url": "https://ispanechannel.it.com/episode/21-rooz-part-6",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/21-rooz/21-Rooz-E06.mp4"
+        ]
+      },
+      {
+        "title": "21 Rooz Part 5",
+        "url": "https://ispanechannel.it.com/episode/21-rooz-part-5",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/21-rooz/21-Rooz-E05.mp4"
+        ]
+      },
+      {
+        "title": "21 Rooz Part 4",
+        "url": "https://ispanechannel.it.com/episode/21-rooz-part-4",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/21-rooz/21-Rooz-E04.mp4"
+        ]
+      },
+      {
+        "title": "21 Rooz Part 3",
+        "url": "https://ispanechannel.it.com/episode/21-rooz-part-3",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/21-rooz/21-Rooz-E03.mp4"
         ]
       },
       {
@@ -2241,12 +2871,96 @@
         "streams": [
           "https://stream.farsicdn.co/serials2/21-rooz/21-Rooz-E02.mp4"
         ]
+      },
+      {
+        "title": "21 Rooz Part 1",
+        "url": "https://ispanechannel.it.com/episode/21-rooz",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/21-rooz/21-Rooz.mp4"
+        ]
       }
     ]
   },
   "Asbabe Zahmat Serial": {
     "show_url": "https://ispanechannel.it.com/tv-show/asbabe-zahmat-serial",
     "episodes": [
+      {
+        "title": "Asbabe Zahmat Ghesmate 24",
+        "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-24",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/asbabe/Zahmat-E24.mp4"
+        ]
+      },
+      {
+        "title": "Asbabe Zahmat Ghesmate 23",
+        "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-23",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/asbabe/Zahmat-E23.mp4"
+        ]
+      },
+      {
+        "title": "Asbabe Zahmat Ghesmate 22",
+        "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-22",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/asbabe/Zahmat-E22.mp4"
+        ]
+      },
+      {
+        "title": "Asbabe Zahmat Ghesmate 21",
+        "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-21",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/asbabe/Zahmat-E21.mp4"
+        ]
+      },
+      {
+        "title": "Asbabe Zahmat Ghesmate 20",
+        "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-20",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/asbabe/Zahmat-E20.mp4"
+        ]
+      },
+      {
+        "title": "Asbabe Zahmat Ghesmate 19",
+        "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-19",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/asbabe/Zahmat-E19.mp4"
+        ]
+      },
+      {
+        "title": "Asbabe Zahmat Ghesmate 18",
+        "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-18",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/asbabe/Zahmat-E18.mp4"
+        ]
+      },
+      {
+        "title": "Asbabe Zahmat Ghesmate 17",
+        "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-17",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/asbabe/Zahmat-E17.mp4"
+        ]
+      },
+      {
+        "title": "Asbabe Zahmat Ghesmate 16",
+        "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-16",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/asbabe/Zahmat-E16.mp4"
+        ]
+      },
+      {
+        "title": "Asbabe Zahmat Ghesmate 15",
+        "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-15",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/asbabe/Zahmat-E15.mp4"
+        ]
+      },
+      {
+        "title": "Asbabe Zahmat Ghesmate 14",
+        "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-14",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/asbabe/Zahmat-E14.mp4"
+        ]
+      },
       {
         "title": "Asbabe Zahmat Ghesmate 13",
         "url": "https://ispanechannel.it.com/episode/asbabe-zahmat-ghesmate-13",
@@ -2344,6 +3058,69 @@
     "show_url": "https://ispanechannel.it.com/tv-show/shah-gol",
     "episodes": [
       {
+        "title": "Shah Gol Part 13",
+        "url": "https://ispanechannel.it.com/episode/shah-gol-part-13",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shahgol/Shahgol-E13.mp4"
+        ]
+      },
+      {
+        "title": "Shah Gol Part 12",
+        "url": "https://ispanechannel.it.com/episode/shah-gol-part-12",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shahgol/Shahgol-E12.mp4"
+        ]
+      },
+      {
+        "title": "Shah Gol Part 11",
+        "url": "https://ispanechannel.it.com/episode/shah-gol-part-11",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shahgol/Shahgol-E11.mp4"
+        ]
+      },
+      {
+        "title": "Shah Gol Part 10",
+        "url": "https://ispanechannel.it.com/episode/shah-gol-part-10",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shahgol/Shahgol-E10.mp4"
+        ]
+      },
+      {
+        "title": "Shah Gol Part 9",
+        "url": "https://ispanechannel.it.com/episode/shah-gol-part-9",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shahgol/Shahgol-E09.mp4"
+        ]
+      },
+      {
+        "title": "Shah Gol Part 8",
+        "url": "https://ispanechannel.it.com/episode/shah-gol-part-8",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shahgol/Shahgol-E08.mp4"
+        ]
+      },
+      {
+        "title": "Shah Gol Part 7",
+        "url": "https://ispanechannel.it.com/episode/shah-gol-part-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shahgol/Shahgol-E07.mp4"
+        ]
+      },
+      {
+        "title": "Shah Gol Part 6",
+        "url": "https://ispanechannel.it.com/episode/shah-gol-part-6",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shahgol/Shahgol-E06.mp4"
+        ]
+      },
+      {
+        "title": "Shah Gol Part 5",
+        "url": "https://ispanechannel.it.com/episode/shah-gol-part-5",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shahgol/Shahgol-E05.mp4"
+        ]
+      },
+      {
         "title": "Shah Gol Part 4",
         "url": "https://ispanechannel.it.com/episode/shah-gol-part-4",
         "streams": [
@@ -2376,6 +3153,34 @@
   "Eteraf Mikonam": {
     "show_url": "https://ispanechannel.it.com/tv-show/eteraf-mikonam",
     "episodes": [
+      {
+        "title": "Eteraf Mikonam Part 10",
+        "url": "https://ispanechannel.it.com/episode/eteraf-mikonam-part-10",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/eteraf/Mikonam-E10.mp4"
+        ]
+      },
+      {
+        "title": "Eteraf Mikonam Part 9",
+        "url": "https://ispanechannel.it.com/episode/eteraf-mikonam-part-9",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/eteraf/Mikonam-E09.mp4"
+        ]
+      },
+      {
+        "title": "Eteraf Mikonam Part 8",
+        "url": "https://ispanechannel.it.com/episode/eteraf-mikonam-part-8",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/eteraf/Mikonam-E08.mp4"
+        ]
+      },
+      {
+        "title": "Eteraf Mikonam Part 7",
+        "url": "https://ispanechannel.it.com/episode/eteraf-mikonam-part-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/eteraf/Mikonam-E07.mp4"
+        ]
+      },
       {
         "title": "Eteraf Mikonam Part 6",
         "url": "https://ispanechannel.it.com/episode/eteraf-mikonam-part-6",
@@ -2512,6 +3317,53 @@
         "url": "https://ispanechannel.it.com/episode/bamdade-khomar-part-1",
         "streams": [
           "https://stream.farsicdn.co/serials/bamdade/Khomar-E01.mp4"
+        ]
+      },
+      {
+        "title": "Bamdade Khomar S2 Part 15",
+        "url": "https://ispanechannel.it.com/episode/bamdade-khomar-s2-part-15",
+        "streams": []
+      },
+      {
+        "title": "Bamdade Khomar S2 Part 14",
+        "url": "https://ispanechannel.it.com/episode/bamdade-khomar-s2-part-14",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/bamdade/Khomar-S2E14.mp4"
+        ]
+      },
+      {
+        "title": "Bamdade Khomar S2 Part 13",
+        "url": "https://ispanechannel.it.com/episode/bamdade-khomar-s2-part-13",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/bamdade/Khomar-S2E13.mp4"
+        ]
+      },
+      {
+        "title": "Bamdade Khomar S2 Part 12",
+        "url": "https://ispanechannel.it.com/episode/bamdade-khomar-s2-part-12",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/bamdade/Khomar-S2E12.mp4"
+        ]
+      },
+      {
+        "title": "Bamdade Khomar S2 Part 11",
+        "url": "https://ispanechannel.it.com/episode/bamdade-khomar-s2-part-11",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/bamdade/Khomar-S2E11.mp4"
+        ]
+      },
+      {
+        "title": "Bamdade Khomar S2 Part 10",
+        "url": "https://ispanechannel.it.com/episode/bamdade-khomar-s2-part-10",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/bamdade/Khomar-S2E10.mp4"
+        ]
+      },
+      {
+        "title": "Bamdade Khomar S2 Part 9",
+        "url": "https://ispanechannel.it.com/episode/bamdade-khomar-s2-part-9",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/bamdade/Khomar-S2E09.mp4"
         ]
       },
       {
@@ -2667,9 +3519,53 @@
         ]
       },
       {
+        "title": "Shefrooni S2 Part 11",
+        "url": "https://ispanechannel.it.com/episode/shefrooni-s2-part-11",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shefroni/Shefrooni-S2E11.mp4"
+        ]
+      },
+      {
+        "title": "Shefrooni S2 Part 10",
+        "url": "https://ispanechannel.it.com/episode/shefrooni-s2-part-10",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shefroni/Shefrooni-S2E10.mp4"
+        ]
+      },
+      {
+        "title": "Shefrooni S2 Part 9",
+        "url": "https://ispanechannel.it.com/episode/shefrooni-s2-part-9",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shefroni/Shefrooni-S2E09.mp4"
+        ]
+      },
+      {
+        "title": "Shefrooni S2 Part 8",
+        "url": "https://ispanechannel.it.com/episode/shefrooni-s2-part-8",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shefroni/Shefrooni-S2E08.mp4"
+        ]
+      },
+      {
+        "title": "Shefrooni S2 Part 7",
+        "url": "https://ispanechannel.it.com/episode/shefrooni-s2-part-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shefroni/Shefrooni-S2E07.mp4"
+        ]
+      },
+      {
+        "title": "Shefrooni S2 Part 6",
+        "url": "https://ispanechannel.it.com/episode/shefrooni-s2-part-6",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shefroni/Shefrooni-S2E06.mp4"
+        ]
+      },
+      {
         "title": "Shefrooni S2 Part 5",
         "url": "https://ispanechannel.it.com/episode/shefrooni-s2-part-5",
-        "streams": []
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shefroni/Shefrooni-S2E05.mp4"
+        ]
       },
       {
         "title": "Shefrooni S2 Part 4",
@@ -2704,6 +3600,55 @@
   "Ham Kalam": {
     "show_url": "https://ispanechannel.it.com/tv-show/ham-kalam",
     "episodes": [
+      {
+        "title": "Ham Kalam Part 12",
+        "url": "https://ispanechannel.it.com/episode/ham-kalam-part-12",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/ham-kalam/Ham-Kalam-E12.mp4"
+        ]
+      },
+      {
+        "title": "Ham Kalam Part 11",
+        "url": "https://ispanechannel.it.com/episode/ham-kalam-part-11",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/ham-kalam/Ham-Kalam-E11.mp4"
+        ]
+      },
+      {
+        "title": "Ham Kalam Part 10",
+        "url": "https://ispanechannel.it.com/episode/ham-kalam-part-10",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/ham-kalam/Ham-Kalam-E10.mp4"
+        ]
+      },
+      {
+        "title": "Ham Kalam Part 9",
+        "url": "https://ispanechannel.it.com/episode/ham-kalam-part-9",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/ham-kalam/Ham-Kalam-E09.mp4"
+        ]
+      },
+      {
+        "title": "Ham Kalam Part 8",
+        "url": "https://ispanechannel.it.com/episode/ham-kalam-part-8",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/ham-kalam/Ham-Kalam-E08.mp4"
+        ]
+      },
+      {
+        "title": "Ham Kalam Part 7",
+        "url": "https://ispanechannel.it.com/episode/ham-kalam-part-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/ham-kalam/Ham-Kalam-E07.mp4"
+        ]
+      },
+      {
+        "title": "Ham Kalam Part 6",
+        "url": "https://ispanechannel.it.com/episode/ham-kalam-part-6",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/ham-kalam/Ham-Kalam-E06.mp4"
+        ]
+      },
       {
         "title": "Ham Kalam Part 5",
         "url": "https://ispanechannel.it.com/episode/ham-kalam-part-5",
@@ -2753,63 +3698,63 @@
         "title": "Kankel Ghesmate 13",
         "url": "https://ispanechannel.it.com/episode/kankel-ghesmate-13",
         "streams": [
-          "https://stream.farsicdn.co/serials/cankel/Kankel-E13.mp4"
+          "https://stream.farsicdn.co/serials2/kankel/Cancel-E13.mp4"
         ]
       },
       {
         "title": "Kankel Ghesmate 12",
         "url": "https://ispanechannel.it.com/episode/kankel-ghesmate-12",
         "streams": [
-          "https://stream.farsicdn.co/serials/cankel/Kankel-E12.mp4"
+          "https://stream.farsicdn.co/serials2/kankel/Cancel-E12.mp4"
         ]
       },
       {
         "title": "Kankel Ghesmate 11",
         "url": "https://ispanechannel.it.com/episode/kankel-ghesmate-11",
         "streams": [
-          "https://stream.farsicdn.co/serials/cankel/Kankel-E11.mp4"
+          "https://stream.farsicdn.co/serials2/kankel/Cancel-E11.mp4"
         ]
       },
       {
         "title": "Kankel Ghesmate 10",
         "url": "https://ispanechannel.it.com/episode/kankel-ghesmate-10",
         "streams": [
-          "https://stream.farsicdn.co/serials/cankel/Kankel-E10.mp4"
+          "https://stream.farsicdn.co/serials2/kankel/Cancel-E10.mp4"
         ]
       },
       {
         "title": "Kankel Ghesmate 9",
         "url": "https://ispanechannel.it.com/episode/kankel-ghesmate-9",
         "streams": [
-          "https://stream.farsicdn.co/serials/cankel/Kankel-E09.mp4"
+          "https://stream.farsicdn.co/serials2/kankel/Cancel-E09.mp4"
         ]
       },
       {
         "title": "Kankel Ghesmate 8",
         "url": "https://ispanechannel.it.com/episode/kankel-ghesmate-8",
         "streams": [
-          "https://stream.farsicdn.co/serials/cankel/Kankel-E08.mp4"
+          "https://stream.farsicdn.co/serials2/kankel/Cancel-E08.mp4"
         ]
       },
       {
         "title": "Kankel Ghesmate 7",
         "url": "https://ispanechannel.it.com/episode/kankel-ghesmate-7",
         "streams": [
-          "https://stream.farsicdn.co/serials/cankel/Kankel-E07.mp4"
+          "https://stream.farsicdn.co/serials2/kankel/Cancel-E07.mp4"
         ]
       },
       {
         "title": "Kankel Ghesmate 6",
         "url": "https://ispanechannel.it.com/episode/kankel-ghesmate-6",
         "streams": [
-          "https://stream.farsicdn.co/serials/cankel/Kankel-E06.mp4"
+          "https://stream.farsicdn.co/serials2/kankel/Cancel-E06.mp4"
         ]
       },
       {
         "title": "Kankel Ghesmate 5",
         "url": "https://ispanechannel.it.com/episode/kankel-ghesmate-5",
         "streams": [
-          "https://stream.farsicdn.co/serials/cankel/Kankel-E05.mp4"
+          "https://stream.farsicdn.co/serials2/kankel/Cancel-E05.mp4"
         ]
       },
       {
@@ -7617,9 +8562,109 @@
         ]
       },
       {
+        "title": "Zane Rooz S3 Part 30",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-30",
+        "streams": [
+          "https://www.youtube.com/embed/tiK6G-STOAw"
+        ]
+      },
+      {
+        "title": "Zane Rooz S3 Part 29",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-29",
+        "streams": [
+          "https://www.youtube.com/embed/MAvEH6bLZpU"
+        ]
+      },
+      {
+        "title": "Zane Rooz S3 Part 28",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-28",
+        "streams": [
+          "https://www.youtube.com/embed/csu6bussMdk"
+        ]
+      },
+      {
+        "title": "Zane Rooz S3 Part 27",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-27",
+        "streams": [
+          "https://www.youtube.com/embed/wWnycbQdCts"
+        ]
+      },
+      {
+        "title": "Zane Rooz S3 Part 26",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-26",
+        "streams": [
+          "https://www.youtube.com/embed/JYz7CtVFURA"
+        ]
+      },
+      {
+        "title": "Zane Rooz S3 Part 25",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-25",
+        "streams": [
+          "https://www.youtube.com/embed/mYn42-juPCk"
+        ]
+      },
+      {
+        "title": "Zane Rooz S3 Part 24",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-24",
+        "streams": [
+          "https://www.youtube.com/embed/iszPlnaTq5M"
+        ]
+      },
+      {
+        "title": "Zane Rooz S3 Part 23",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-23",
+        "streams": [
+          "https://www.youtube.com/embed/-U9-DPi5kYk"
+        ]
+      },
+      {
+        "title": "Zane Rooz S3 Part 22",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-22",
+        "streams": [
+          "https://www.youtube.com/embed/m7SYk1Z0zTY"
+        ]
+      },
+      {
+        "title": "Zane Rooz S3 Part 21",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-21",
+        "streams": [
+          "https://www.youtube.com/embed/VDYXNYzVSiU"
+        ]
+      },
+      {
+        "title": "Zane Rooz S3 Part 20",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-20",
+        "streams": [
+          "https://www.youtube.com/embed/mSp9H373zeI"
+        ]
+      },
+      {
+        "title": "Zane Rooz S3 Part 19",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-19",
+        "streams": [
+          "https://www.youtube.com/embed/4P3wojzBfXg"
+        ]
+      },
+      {
+        "title": "Zane Rooz S3 Part 18",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-18",
+        "streams": [
+          "https://www.youtube.com/embed/OfNwL7vbUmw"
+        ]
+      },
+      {
+        "title": "Zane Rooz S3 Part 17",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-17",
+        "streams": [
+          "https://www.youtube.com/embed/upZxXKQgpRE"
+        ]
+      },
+      {
         "title": "Zane Rooz S3 Part 16",
         "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-16",
-        "streams": []
+        "streams": [
+          "https://www.youtube.com/embed/sZI6jmLoESo"
+        ]
       },
       {
         "title": "Zane Rooz S3 Part 15",
@@ -7724,6 +8769,230 @@
         "url": "https://ispanechannel.it.com/episode/zane-rooz-s3-part-1",
         "streams": [
           "https://www.youtube.com/embed/5lGAMLx7-nA"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 30",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-30",
+        "streams": [
+          "https://www.youtube.com/embed/Z4UOjm1AnVE"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 29",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-29",
+        "streams": [
+          "https://www.youtube.com/embed/2B3lcnuj0RI"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 28",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-28",
+        "streams": [
+          "https://www.youtube.com/embed/V1oDw7bvypI"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 27",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-27",
+        "streams": [
+          "https://www.youtube.com/embed/-dYbeCxDBsQ"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 26",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-26",
+        "streams": [
+          "https://www.youtube.com/embed/gvJglEukQTw"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 25",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-25",
+        "streams": [
+          "https://www.youtube.com/embed/wFaRNNCt87Y"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 24",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-24",
+        "streams": [
+          "https://www.youtube.com/embed/UNXRTX-0nss"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 23",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-23",
+        "streams": [
+          "https://www.youtube.com/embed/VkQLdeXHAks"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 22",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-22",
+        "streams": [
+          "https://www.youtube.com/embed/zAprDsxB_ec"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 21",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-21",
+        "streams": [
+          "https://www.youtube.com/embed/2ejQU3Iyp-I"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 20",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-20",
+        "streams": [
+          "https://www.youtube.com/embed/eVXW36ei2PQ"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 19",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-19",
+        "streams": [
+          "https://www.youtube.com/embed/Gn18HbIA_2w"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 18",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-18",
+        "streams": [
+          "https://www.youtube.com/embed/6RFV8tE8wFc"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 17",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-17",
+        "streams": [
+          "https://www.youtube.com/embed/aUGDbXeq1Qk"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 16",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-16",
+        "streams": [
+          "https://www.youtube.com/embed/P5wpGIEUuvc"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 15",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-15",
+        "streams": [
+          "https://www.youtube.com/embed/psMIPtOxv0Q"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 14",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-14",
+        "streams": [
+          "https://www.youtube.com/embed/mAN95Ra1v1M"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 13",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-13",
+        "streams": [
+          "https://www.youtube.com/embed/gE74AHu4Mto"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 12",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-12",
+        "streams": [
+          "https://www.youtube.com/embed/UGtDWeuWVkw"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 11",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-11",
+        "streams": [
+          "https://www.youtube.com/embed/DoV6TEYWGxc"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 10",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-10",
+        "streams": [
+          "https://www.youtube.com/embed/T322NGv0VYM"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 9",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-9",
+        "streams": [
+          "https://www.youtube.com/embed/dJskTQ12AUY"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 8",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-8",
+        "streams": [
+          "https://www.youtube.com/embed/vr9Gmte5y08"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 7",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-7",
+        "streams": [
+          "https://www.youtube.com/embed/HPPS13JjOV0"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 6",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-6",
+        "streams": [
+          "https://www.youtube.com/embed/9VXiHrV8iUg"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 5",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-5",
+        "streams": [
+          "https://www.youtube.com/embed/1mvBlqSKDW0"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 4",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-4",
+        "streams": [
+          "https://www.youtube.com/embed/N9xtrwqelS4"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 3",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-3",
+        "streams": [
+          "https://www.youtube.com/embed/IX6ylZU0AWA"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 2",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-2",
+        "streams": [
+          "https://www.youtube.com/embed/OXW8-NquPrA"
+        ]
+      },
+      {
+        "title": "Zane Rooz S4 Part 1",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-1",
+        "streams": [
+          "https://www.youtube.com/embed/OlsjkZQ10ys"
+        ]
+      },
+      {
+        "title": "Zane Rooz S5 Part 2",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s5-part-2",
+        "streams": [
+          "https://www.youtube.com/embed/lxfL_9btH58"
+        ]
+      },
+      {
+        "title": "Zane Rooz S5 Part 1",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s5-part-1",
+        "streams": [
+          "https://www.youtube.com/embed/aKYbx_jmOWw"
         ]
       }
     ]
@@ -9504,6 +10773,403 @@
         "url": "https://ispanechannel.it.com/episode/el-klasiko-part-1",
         "streams": [
           "https://stream.farsicdn.co/serials/el-klasico/El-Klasico-E01.mp4"
+        ]
+      }
+    ]
+  },
+  "Dore Amir Show": {
+    "show_url": "https://ispanechannel.it.com/tv-show/dore-amir-show",
+    "episodes": [
+      {
+        "title": "Dore Amir Part 6",
+        "url": "https://ispanechannel.it.com/episode/dore-amir-part-6",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/dore-amir/Dore-Amir-E06.mp4"
+        ]
+      },
+      {
+        "title": "Dore Amir Part 5",
+        "url": "https://ispanechannel.it.com/episode/dore-amir-part-5",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/dore-amir/Dore-Amir-E05.mp4"
+        ]
+      },
+      {
+        "title": "Dore Amir Part 4",
+        "url": "https://ispanechannel.it.com/episode/dore-amir-part-4",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/dore-amir/Dore-Amir-E04.mp4"
+        ]
+      },
+      {
+        "title": "Dore Amir Part 3",
+        "url": "https://ispanechannel.it.com/episode/dore-amir-part-3",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/dore-amir/Dore-Amir-E03.mp4"
+        ]
+      },
+      {
+        "title": "Dore Amir Part 2",
+        "url": "https://ispanechannel.it.com/episode/dore-amir-part-2",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/dore-amir/Dore-Amir-E02.mp4"
+        ]
+      },
+      {
+        "title": "Dore Amir Part 1",
+        "url": "https://ispanechannel.it.com/episode/dore-amir-part-1",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/dore-amir/Dore-Amir-E01.mp4"
+        ]
+      }
+    ]
+  },
+  "Maymoone Mast": {
+    "show_url": "https://ispanechannel.it.com/tv-show/maymoone-mast",
+    "episodes": [
+      {
+        "title": "Maymoone Mast Part 1",
+        "url": "https://ispanechannel.it.com/episode/maymoone-mast-part-1",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/meymoone/Mast-E01.mp4"
+        ]
+      }
+    ]
+  },
+  "Yal": {
+    "show_url": "https://ispanechannel.it.com/tv-show/yal",
+    "episodes": [
+      {
+        "title": "Yal Part 6",
+        "url": "https://ispanechannel.it.com/episode/yal-part-6",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/yal/Yal-E06.mp4"
+        ]
+      },
+      {
+        "title": "Yal Part 5",
+        "url": "https://ispanechannel.it.com/episode/yal-part-5",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/yal/Yal-E05.mp4"
+        ]
+      },
+      {
+        "title": "Yal Part 4",
+        "url": "https://ispanechannel.it.com/episode/yal-part-4",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/yal/Yal-E04.mp4"
+        ]
+      },
+      {
+        "title": "Yal Part 3",
+        "url": "https://ispanechannel.it.com/episode/yal-part-3",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/yal/Yal-E03.mp4"
+        ]
+      },
+      {
+        "title": "Yal Part 2",
+        "url": "https://ispanechannel.it.com/episode/yal-part-2",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/yal/Yal-E02.mp4"
+        ]
+      },
+      {
+        "title": "Yal Part 1",
+        "url": "https://ispanechannel.it.com/episode/yal-part-1",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/yal/Yal-E01.mp4"
+        ]
+      }
+    ]
+  },
+  "Sorkh va Siyah": {
+    "show_url": "https://ispanechannel.it.com/tv-show/sorkh-va-siyah",
+    "episodes": [
+      {
+        "title": "Sorkh va Siyah Part 5",
+        "url": "https://ispanechannel.it.com/episode/sorkh-va-siyah-part-5",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/sorkho/Siah-E05.mp4"
+        ]
+      },
+      {
+        "title": "Sorkh va Siyah Part 4",
+        "url": "https://ispanechannel.it.com/episode/sorkh-va-siyah-part-4",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/sorkho/Siah-E04.mp4"
+        ]
+      },
+      {
+        "title": "Sorkh va Siyah Part 3",
+        "url": "https://ispanechannel.it.com/episode/sorkh-va-siyah-part-3",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/sorkho/Siah-E03.mp4"
+        ]
+      },
+      {
+        "title": "Sorkh va Siyah Part 2",
+        "url": "https://ispanechannel.it.com/episode/sorkh-va-siyah-part-2",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/sorkho/Siah-E02.mp4"
+        ]
+      },
+      {
+        "title": "Sorkh va Siyah Part 1",
+        "url": "https://ispanechannel.it.com/episode/sorkh-va-siyah-part-1",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/sorkho/Siah-E01.mp4"
+        ]
+      }
+    ]
+  },
+  "Taxi series": {
+    "show_url": "https://ispanechannel.it.com/tv-show/taxi-series",
+    "episodes": [
+      {
+        "title": "Taxi series Part 6",
+        "url": "https://ispanechannel.it.com/episode/taxi-series-part-6",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/taxi/Taxi-E06.mp4"
+        ]
+      },
+      {
+        "title": "Taxi series Part 5",
+        "url": "https://ispanechannel.it.com/episode/taxi-series-part-5",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/taxi/Taxi-E05.mp4"
+        ]
+      },
+      {
+        "title": "Taxi series Part 4",
+        "url": "https://ispanechannel.it.com/episode/taxi-series-part-4",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/taxi/Taxi-E04.mp4"
+        ]
+      },
+      {
+        "title": "Taxi series Part 3",
+        "url": "https://ispanechannel.it.com/episode/taxi-series-part-3",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/taxi/Taxi-E03.mp4"
+        ]
+      },
+      {
+        "title": "Taxi series Part 2",
+        "url": "https://ispanechannel.it.com/episode/taxi-series-part-2",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/taxi/Taxi-E02.mp4"
+        ]
+      },
+      {
+        "title": "Taxi series Part 1",
+        "url": "https://ispanechannel.it.com/episode/taxi-series-part-1",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/taxi/Taxi-E01.mp4"
+        ]
+      }
+    ]
+  },
+  "Ostokhan Sooz": {
+    "show_url": "https://ispanechannel.it.com/tv-show/ostokhan-sooz",
+    "episodes": [
+      {
+        "title": "Ostokhan Sooz Part 3",
+        "url": "https://ispanechannel.it.com/episode/ostokhan-sooz-part-3",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/ostokhan/Sooz-E03.mp4"
+        ]
+      },
+      {
+        "title": "Ostokhan Sooz Part 2",
+        "url": "https://ispanechannel.it.com/episode/ostokhan-sooz-part-2",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/ostokhan/Sooz-E02.mp4"
+        ]
+      },
+      {
+        "title": "Ostokhan Sooz Part 1",
+        "url": "https://ispanechannel.it.com/episode/ostokhan-sooz-part-1",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/ostokhan/Sooz-E01.mp4"
+        ]
+      }
+    ]
+  },
+  "Fun Abutaleb": {
+    "show_url": "https://ispanechannel.it.com/tv-show/fun-abutaleb",
+    "episodes": [
+      {
+        "title": "Fun Abutaleb Part 7",
+        "url": "https://ispanechannel.it.com/episode/fun-abutaleb-part-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/fun-abutaleb/fun-abutaleb-E07.mp4"
+        ]
+      },
+      {
+        "title": "Fun Abutaleb Part 6",
+        "url": "https://ispanechannel.it.com/episode/fun-abutaleb-part-6",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/fun-abutaleb/fun-abutaleb-E06.mp4"
+        ]
+      },
+      {
+        "title": "Fun Abutaleb Part 5",
+        "url": "https://ispanechannel.it.com/episode/fun-abutaleb-part-5",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/fun-abutaleb/fun-abutaleb-E05.mp4"
+        ]
+      },
+      {
+        "title": "Fun Abutaleb Part 4",
+        "url": "https://ispanechannel.it.com/episode/fun-abutaleb-part-4",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/fun-abutaleb/fun-abutaleb-E04.mp4"
+        ]
+      },
+      {
+        "title": "Fun Abutaleb Part 3",
+        "url": "https://ispanechannel.it.com/episode/fun-abutaleb-part-3",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/fun-abutaleb/fun-abutaleb-E03.mp4"
+        ]
+      },
+      {
+        "title": "Fun Abutaleb Part 2",
+        "url": "https://ispanechannel.it.com/episode/fun-abutaleb-part-2",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/fun-abutaleb/fun-abutaleb-E02.mp4"
+        ]
+      },
+      {
+        "title": "Fun Abutaleb Part 1",
+        "url": "https://ispanechannel.it.com/episode/fun-abutaleb-part-1",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/fun-abutaleb/fun-abutaleb-E01.mp4"
+        ]
+      }
+    ]
+  },
+  "Backstream Boyz": {
+    "show_url": "https://ispanechannel.it.com/tv-show/backstream-boyz",
+    "episodes": [
+      {
+        "title": "Backstream Boys Part 17",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-17",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E17.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 16",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-16",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E16.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 15",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-15",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E15.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 14",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-14",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E14.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 13",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-13",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E13.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 12",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-12",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E12.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 11",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-11",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E11.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 10",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-10",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E10.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 9",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-9",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E09.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 8",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-8",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E08.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 7",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E07.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 6",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-6",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E06.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 5",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-5",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E05.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 4",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-4",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E04.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 3",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-3",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E03.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 2",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-2",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E02.mp4"
+        ]
+      },
+      {
+        "title": "Backstream Boys Part 1",
+        "url": "https://ispanechannel.it.com/episode/backstream-boys-part-1",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/backstream/Boys-E01.mp4"
         ]
       }
     ]
