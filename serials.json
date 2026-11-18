@@ -1747,6 +1747,13 @@
         ]
       },
       {
+        "title": "Eshghe Abadi S3 Episode 102",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-102",
+        "streams": [
+          "https://www.youtube.com/embed/kfngQsj-H5k"
+        ]
+      },
+      {
         "title": "Eshghe Abadi S3 Episode 101",
         "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-101",
         "streams": [
@@ -3706,7 +3713,9 @@
       {
         "title": "Kankel Ghesmate 14",
         "url": "https://ispanechannel.it.com/episode/kankel-ghesmate-14",
-        "streams": []
+        "streams": [
+          "https://stream.farsicdn.co/serials2/kankel/Cancel-E14.mp4"
+        ]
       },
       {
         "title": "Kankel Ghesmate 13",
@@ -5154,9 +5163,7 @@
       {
         "title": "Shame Irani 3 S5 Part 1",
         "url": "https://ispanechannel.it.com/episode/shame-irani-3-s5-part-1",
-        "streams": [
-          "https://stream.farsicdn.co/serials/shame-irani-3/ShamIrani-S5E01.mp4"
-        ]
+        "streams": []
       },
       {
         "title": "Shame Irani 3 S6 Part 1",
@@ -5568,9 +5575,7 @@
       {
         "title": "Anjomane Ashbah Part 3",
         "url": "https://ispanechannel.it.com/episode/anjomane-ashbah-part-3",
-        "streams": [
-          "https://stream.farsicdn.co/serials/anjomane/Eshbah-E03.mp4"
-        ]
+        "streams": []
       },
       {
         "title": "Anjomane Ashbah Part 2",
@@ -8911,6 +8916,13 @@
         "url": "https://ispanechannel.it.com/episode/zane-rooz-s5-part-1",
         "streams": [
           "https://www.youtube.com/embed/aKYbx_jmOWw"
+        ]
+      },
+      {
+        "title": "Zane Rooz S5 Part 5",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s5-part-5",
+        "streams": [
+          "https://www.youtube.com/embed/zC3fcCGiVMI"
         ]
       }
     ]
