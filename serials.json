@@ -615,9 +615,7 @@
       {
         "title": "Eshghe Abadi Part 57",
         "url": "https://ispanechannel.it.com/episode/eshghe-abadi-part-57",
-        "streams": [
-          "https://www.youtube.com/embed/mS55_xaHmA0"
-        ]
+        "streams": []
       },
       {
         "title": "Eshghe Abadi Part 56",
@@ -1744,6 +1742,13 @@
         "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s2-part-105",
         "streams": [
           "https://www.youtube.com/embed/lPab3K63Vo8"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 103",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-103",
+        "streams": [
+          "https://www.youtube.com/embed/MK1qtWxOV8U"
         ]
       },
       {
@@ -3071,6 +3076,13 @@
   "Shah Gol": {
     "show_url": "https://ispanechannel.it.com/tv-show/shah-gol",
     "episodes": [
+      {
+        "title": "Shah Gol Part 14",
+        "url": "https://ispanechannel.it.com/episode/shah-gol-part-14",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shahgol/Shahgol-E14.mp4"
+        ]
+      },
       {
         "title": "Shah Gol Part 13",
         "url": "https://ispanechannel.it.com/episode/shah-gol-part-13",
@@ -5163,7 +5175,9 @@
       {
         "title": "Shame Irani 3 S5 Part 1",
         "url": "https://ispanechannel.it.com/episode/shame-irani-3-s5-part-1",
-        "streams": []
+        "streams": [
+          "https://stream.farsicdn.co/serials/shame-irani-3/ShamIrani-S5E01.mp4"
+        ]
       },
       {
         "title": "Shame Irani 3 S6 Part 1",
@@ -5575,7 +5589,9 @@
       {
         "title": "Anjomane Ashbah Part 3",
         "url": "https://ispanechannel.it.com/episode/anjomane-ashbah-part-3",
-        "streams": []
+        "streams": [
+          "https://stream.farsicdn.co/serials/anjomane/Eshbah-E03.mp4"
+        ]
       },
       {
         "title": "Anjomane Ashbah Part 2",
@@ -10711,6 +10727,13 @@
     "show_url": "https://ispanechannel.it.com/tv-show/dore-amir-show",
     "episodes": [
       {
+        "title": "Dore Amir Part 7",
+        "url": "https://ispanechannel.it.com/episode/dore-amir-part-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/dore-amir/Dore-Amir-E07.mp4"
+        ]
+      },
+      {
         "title": "Dore Amir Part 6",
         "url": "https://ispanechannel.it.com/episode/dore-amir-part-6",
         "streams": [
@@ -10856,6 +10879,13 @@
   "Taxi series": {
     "show_url": "https://ispanechannel.it.com/tv-show/taxi-series",
     "episodes": [
+      {
+        "title": "Taxi series Part 7",
+        "url": "https://ispanechannel.it.com/episode/taxi-series-part-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/taxi/Taxi-E07.mp4"
+        ]
+      },
       {
         "title": "Taxi series Part 6",
         "url": "https://ispanechannel.it.com/episode/taxi-series-part-6",
