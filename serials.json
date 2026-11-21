@@ -85,6 +85,13 @@
     "show_url": "https://ispanechannel.it.com/tv-show/aqaye-ghazi",
     "episodes": [
       {
+        "title": "Aqaye Ghazi Part 23",
+        "url": "https://ispanechannel.it.com/episode/aqaye-ghazi-part-23",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/aqaye/Qazi-E23.mp4"
+        ]
+      },
+      {
         "title": "Aqaye Ghazi Part 22",
         "url": "https://ispanechannel.it.com/episode/aqaye-ghazi-part-22",
         "streams": [
@@ -243,6 +250,13 @@
   "Marde 3 Hezar Chehre": {
     "show_url": "https://ispanechannel.it.com/tv-show/marde-3-hezar-chehre",
     "episodes": [
+      {
+        "title": "Marde Se Hezar Chehre Ghesmate 10",
+        "url": "https://ispanechannel.it.com/episode/marde-se-hezar-chehre-ghesmate-10",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/marde-3-hezar/Chehre-E10.mp4"
+        ]
+      },
       {
         "title": "Marde Se Hezar Chehre Ghesmate 9",
         "url": "https://ispanechannel.it.com/episode/marde-se-hezar-chehre-ghesmate-9",
@@ -1744,6 +1758,13 @@
         "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s2-part-105",
         "streams": [
           "https://www.youtube.com/embed/lPab3K63Vo8"
+        ]
+      },
+      {
+        "title": "Eshghe Abadi S3 Episode 105",
+        "url": "https://ispanechannel.it.com/episode/eshghe-abadi-s3-episode-105",
+        "streams": [
+          "https://www.youtube.com/embed/8SZRRMjsIic"
         ]
       },
       {
@@ -8916,6 +8937,20 @@
         ]
       },
       {
+        "title": "Zane Rooz S5 Part 6",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s5-part-6",
+        "streams": [
+          "https://www.youtube.com/embed/qXQ_ZWKUKaU"
+        ]
+      },
+      {
+        "title": "Zane Rooz S5 Part 5",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s5-part-5",
+        "streams": [
+          "https://www.youtube.com/embed/zC3fcCGiVMI"
+        ]
+      },
+      {
         "title": "Zane Rooz S5 Part 4",
         "url": "https://ispanechannel.it.com/episode/zane-rooz-s5-part-4",
         "streams": [
@@ -8941,13 +8976,6 @@
         "url": "https://ispanechannel.it.com/episode/zane-rooz-s5-part-1",
         "streams": [
           "https://www.youtube.com/embed/aKYbx_jmOWw"
-        ]
-      },
-      {
-        "title": "Zane Rooz S5 Part 5",
-        "url": "https://ispanechannel.it.com/episode/zane-rooz-s5-part-5",
-        "streams": [
-          "https://www.youtube.com/embed/zC3fcCGiVMI"
         ]
       }
     ]
@@ -10863,7 +10891,9 @@
       {
         "title": "Sorkh va Siyah Part 6",
         "url": "https://ispanechannel.it.com/episode/sorkh-va-siyah-part-6",
-        "streams": []
+        "streams": [
+          "https://stream.farsicdn.co/serials2/sorkho/Siah-E06.mp4"
+        ]
       },
       {
         "title": "Sorkh va Siyah Part 5",
