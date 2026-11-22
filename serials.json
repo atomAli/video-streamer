@@ -3,6 +3,13 @@
     "show_url": "https://ispanechannel.it.com/tv-show/roshan-show",
     "episodes": [
       {
+        "title": "Roshan Part 12",
+        "url": "https://ispanechannel.it.com/episode/roshan-part-12",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/roshan/Roshan-E12.mp4"
+        ]
+      },
+      {
         "title": "Roshan Part 11",
         "url": "https://ispanechannel.it.com/episode/roshan-part-11",
         "streams": [
@@ -8934,6 +8941,13 @@
         "url": "https://ispanechannel.it.com/episode/zane-rooz-s4-part-1",
         "streams": [
           "https://www.youtube.com/embed/OlsjkZQ10ys"
+        ]
+      },
+      {
+        "title": "Zane Rooz S5 Part 7",
+        "url": "https://ispanechannel.it.com/episode/zane-rooz-s5-part-7",
+        "streams": [
+          "https://www.youtube.com/embed/9UQRycAXx0s"
         ]
       },
       {
