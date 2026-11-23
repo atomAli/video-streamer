@@ -402,5 +402,17 @@
     "streams": [
       "https://stream.farsicdn.co/movies2/Khar-Va-Khak.mp4"
     ]
+  },
+  "Saqf": {
+    "movie_url": "https://ispanechannel.it.com/movie/saqf",
+    "streams": [
+      "https://stream.farsicdn.co/movies2/saqf.mp4"
+    ]
+  },
+  "Napelon Dar Baqre Zardalo": {
+    "movie_url": "https://ispanechannel.it.com/movie/napelon-dar-baqre-zardalo",
+    "streams": [
+      "https://stream.farsicdn.co/movies2/Napoleon-Zardaloo.mp4"
+    ]
   }
 }
