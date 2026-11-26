@@ -3128,6 +3128,13 @@
     "show_url": "https://ispanechannel.it.com/tv-show/shah-gol",
     "episodes": [
       {
+        "title": "Shah Gol Part 15",
+        "url": "https://ispanechannel.it.com/episode/shah-gol-part-15",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/shahgol/Shahgol-E15.mp4"
+        ]
+      },
+      {
         "title": "Shah Gol Part 14",
         "url": "https://ispanechannel.it.com/episode/shah-gol-part-14",
         "streams": [
@@ -10820,6 +10827,13 @@
     "show_url": "https://ispanechannel.it.com/tv-show/dore-amir-show",
     "episodes": [
       {
+        "title": "Dore Amir Part 8",
+        "url": "https://ispanechannel.it.com/episode/dore-amir-part-8",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/dore-amir/Dore-Amir-E08.mp4"
+        ]
+      },
+      {
         "title": "Dore Amir Part 7",
         "url": "https://ispanechannel.it.com/episode/dore-amir-part-7",
         "streams": [
@@ -10991,6 +11005,13 @@
   "Taxi series": {
     "show_url": "https://ispanechannel.it.com/tv-show/taxi-series",
     "episodes": [
+      {
+        "title": "Taxi series Part 8",
+        "url": "https://ispanechannel.it.com/episode/taxi-series-part-7-2",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/taxi/Taxi-E08.mp4"
+        ]
+      },
       {
         "title": "Taxi series Part 7",
         "url": "https://ispanechannel.it.com/episode/taxi-series-part-7",
