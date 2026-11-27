@@ -10888,6 +10888,13 @@
     "show_url": "https://ispanechannel.it.com/tv-show/maymoone-mast",
     "episodes": [
       {
+        "title": "Maymoone Mast Part 3",
+        "url": "https://ispanechannel.it.com/episode/maymoone-mast-part-3",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/meymoone/Mast-E03.mp4"
+        ]
+      },
+      {
         "title": "Maymoone Mast Part 2",
         "url": "https://ispanechannel.it.com/episode/maymoone-mast-part-2",
         "streams": [
@@ -10958,6 +10965,13 @@
   "Sorkh va Siyah": {
     "show_url": "https://ispanechannel.it.com/tv-show/sorkh-va-siyah",
     "episodes": [
+      {
+        "title": "Sorkh va Siyah Part 7",
+        "url": "https://ispanechannel.it.com/episode/sorkh-va-siyah-part-7",
+        "streams": [
+          "https://stream.farsicdn.co/serials2/sorkho/Siah-E07.mp4"
+        ]
+      },
       {
         "title": "Sorkh va Siyah Part 6",
         "url": "https://ispanechannel.it.com/episode/sorkh-va-siyah-part-6",
